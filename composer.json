@@ -1,6 +1,6 @@
 {
-    "name": "khill/lavacharts",
-    "description": "PHP wrapper library for the Google Chart API",
+    "name": "hypoid/lavacharts",
+    "description": "PHP wrapper library for the Google Chart API forker",
     "keywords": [
         "charts",
         "graphs",
@@ -19,41 +19,36 @@
     ],
     "support": {
         "docs": "http://lavacharts.com",
-        "email": "kevinkhill@gmail.com",
-        "forum": "https://gitter.im/kevinkhill/lavacharts",
-        "wiki": "https://github.com/kevinkhill/lavacharts/wiki",
-        "source": "https://github.com/kevinkhill/lavacharts",
-        "issues": "https://github.com/kevinkhill/lavacharts/issues"
+        "email": "-",
+        "wiki": "https://github.com/martialus87/lavacharts/wiki",
+        "source": "https://github.com/martialus87/lavacharts",
+        "issues": "https://github.com/martialus87/lavacharts/issues"
     },
     "suggest": {
         "khill/datatableplus": "Adds extra features to DataTables such as csv and laravel collection parsing."
     },
     "require": {
-        "php": ">=5.4.0",
-        "nesbot/carbon": ">=1.14 <6.0"
+        "php": ">=8.3",
+        "nesbot/carbon": ">=3.0 <6.0"
     },
     "autoload": {
         "psr-4": {
-            "Khill\\Lavacharts\\": "src/"
+            "Hypoid\\Lavacharts\\": "src/"
         }
     },
     "require-dev": {
-        "phpunit/phpunit": "~4.8",
-        "mockery/mockery": "~0.9",
-        "squizlabs/php_codesniffer": "~2.5",
-        "satooshi/php-coveralls": "~1.0",
-        "codeclimate/php-test-reporter": "~0.3"
+        
     },
     "autoload-dev": {
         "psr-4": {
-            "Khill\\Lavacharts\\Tests\\": "tests/"
+            "Hypoid\\Lavacharts\\Tests\\": "tests/"
         }
     },
     "scripts": {
         "test": "phpunit -c phpunit.xml",
         "cs": "phpcs --standard=PSR2 src tests",
         "cbf" : "phpcbf --standard=PSR2 src tests",
-        "version": "php -r \"require(__DIR__.\\\"/src/Lavacharts.php\\\");echo \\Khill\\Lavacharts\\Lavacharts::VERSION;\"",
+        "version": "php -r \"require(__DIR__.\\\"/src/Lavacharts.php\\\");echo \\Hypoid\\Lavacharts\\Lavacharts::VERSION;\"",
         "lavajs:release" : "gulp --cwd javascript release && git add javascript/dist/lava.js && git commit -m 'Releasing new build of the lava.js module' && git push",
         "lavajs:gulp" : "gulp --cwd javascript",
         "lavajs:pull" : "git subtree --prefix=javascript pull lavajs master",
@@ -62,16 +57,16 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Khill\\Lavacharts\\Laravel\\LavachartsServiceProvider"
+                "Hypoid\\Lavacharts\\Laravel\\LavachartsServiceProvider"
             ],
             "aliases": {
-                "Lava": "Khill\\Lavacharts\\Laravel\\LavachartsFacade"
+                "Lava": "Hypoid\\Lavacharts\\Laravel\\LavachartsFacade"
             }
         }
     },
     "config": {
         "platform": {
-            "php": "5.4"
+            "php": "8.3"
         }
     },
     "minimum-stability": "stable"
