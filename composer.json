@@ -15,7 +15,7 @@
         "name": "Martial AUCLERC",
         "email": "martialus87@free.fr",
         "role": "Mainteneur"
-        }
+        },
         {
             "name": "Kevin Hill",
             "email": "kevinkhill@gmail.com",
@@ -24,7 +24,6 @@
     ],
     "support": {
         "docs": "http://lavacharts.com",
-        "email": "-",
         "wiki": "https://github.com/martialus87/lavacharts/wiki",
         "source": "https://github.com/martialus87/lavacharts",
         "issues": "https://github.com/martialus87/lavacharts/issues"
