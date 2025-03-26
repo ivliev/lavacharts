@@ -1,6 +1,7 @@
 {
     "name": "hypoid/lavacharts",
     "description": "PHP wrapper library for the Google Chart API forker",
+    "version": "3.3",
     "keywords": [
         "charts",
         "graphs",
@@ -37,9 +38,14 @@
     },
     "autoload": {
         "psr-4": {
-            "Hypoid\\Lavacharts\\": "src/"
+            "Khill\\Lavacharts\\": "src/"
         }
     },
+    
+    "replace": {
+        "khill/lavacharts": "self.version"
+    },
+    
     "require-dev": {
         
     },
