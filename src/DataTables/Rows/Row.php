@@ -121,7 +121,7 @@ class Row implements \ArrayAccess, \JsonSerializable
             } else {
                 if (is_array($cellValue) === true) {
                     $cell = new \ReflectionClass(
-                        'Khill\\Lavacharts\\DataTables\\Cells\\Cell'
+                        'Hypoid\\Lavacharts\\DataTables\\Cells\\Cell'
                     );
 
                     $rowData[] = $cell->newInstanceArgs($cellValue);

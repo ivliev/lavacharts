@@ -16,16 +16,16 @@ class LavachartsTest extends ProvidersTestCase
 
         $this->lava = new Lavacharts;
 
-        $this->mockLabel = \Mockery::mock('\\Khill\\Lavacharts\\Values\\Label', ['MockLabel'])->makePartial();
+        $this->mockLabel = \Mockery::mock('\\Hypoid\\Lavacharts\\Values\\Label', ['MockLabel'])->makePartial();
 
-        $this->partialDataTableWithReceives = \Mockery::mock('\\Khill\\Lavacharts\\DataTables\\DataTable')
+        $this->partialDataTableWithReceives = \Mockery::mock('\\Hypoid\\Lavacharts\\DataTables\\DataTable')
                                           ->shouldReceive('toJson')
                                           ->atMost(1)
                                           ->shouldReceive('hasFormats')
                                           ->atLeast(1)
                                           ->getMock();
 
-        $this->mockLineChart = \Mockery::mock('\\Khill\\Lavacharts\\Charts\\LineChart');
+        $this->mockLineChart = \Mockery::mock('\\Hypoid\\Lavacharts\\Charts\\LineChart');
     }
 
     public function testCreateDataTableViaAlias()

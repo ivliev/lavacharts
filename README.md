@@ -1,3 +1,7 @@
+# Lavacharts 3.6
+
+- Coorection lien Khill\\ par Hypoid\\
+
 # Lavacharts 3.5
 
 - Tentative d'update pour Laravel 12 et multi correction

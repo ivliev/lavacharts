@@ -21,7 +21,7 @@ class ChartTest extends ProvidersTestCase
      */
     public function testInstanceCreation($chartType)
     {
-        $chartFQN = "Khill\\Lavacharts\\Charts\\".$chartType;
+        $chartFQN = "Hypoid\\Lavacharts\\Charts\\".$chartType;
 
         $chart = new $chartFQN(
             $this->getMockLabel('TestChart'),

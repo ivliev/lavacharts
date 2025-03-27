@@ -1,7 +1,7 @@
 {
     "name": "hypoid/lavacharts",
     "description": "PHP wrapper library for the Google Chart API forker",
-    "version": "3.5",
+    "version": "3.6",
     "keywords": [
         "charts",
         "graphs",

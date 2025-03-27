@@ -5,7 +5,7 @@ namespace Hypoid\Lavacharts\Tests;
 use Hypoid\Lavacharts\Charts\ChartFactory;
 use Hypoid\Lavacharts\DataTables\Columns\ColumnFactory;
 
-define('DATATABLE_NS', "\\Khill\\Lavacharts\\DataTables\\");
+define('DATATABLE_NS', "\\Hypoid\\Lavacharts\\DataTables\\");
 
 abstract class ProvidersTestCase extends \PHPUnit_Framework_TestCase
 {

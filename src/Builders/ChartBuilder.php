@@ -134,7 +134,7 @@ class ChartBuilder extends GenericBuilder
      */
     public function getChart()
     {
-        $chart =  '\\Khill\\Lavacharts\\Charts\\' . $this->type;
+        $chart =  '\\Hypoid\\Lavacharts\\Charts\\' . $this->type;
 
         /** @var \Hypoid\Lavacharts\Charts\Chart $newChart */
         $newChart = new $chart(
