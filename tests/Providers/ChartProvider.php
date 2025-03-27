@@ -1,33 +1,33 @@
 <?php
 
-namespace Khill\Lavacharts\Tests\Providers;
+namespace Hypoid\Lavacharts\Tests\Providers;
 
 use BadMethodCallException;
-use Khill\Lavacharts\Charts\AnnotationChart;
-use Khill\Lavacharts\Charts\AreaChart;
-use Khill\Lavacharts\Charts\BarChart;
-use Khill\Lavacharts\Charts\BubbleChart;
-use Khill\Lavacharts\Charts\CalendarChart;
-use Khill\Lavacharts\Charts\CandlestickChart;
-use Khill\Lavacharts\Charts\Chart;
-use Khill\Lavacharts\Charts\ColumnChart;
-use Khill\Lavacharts\Charts\ComboChart;
-use Khill\Lavacharts\Charts\DonutChart;
-use Khill\Lavacharts\Charts\GanttChart;
-use Khill\Lavacharts\Charts\GaugeChart;
-use Khill\Lavacharts\Charts\GeoChart;
-use Khill\Lavacharts\Charts\HistogramChart;
-use Khill\Lavacharts\Charts\LineChart;
-use Khill\Lavacharts\Charts\OrgChart;
-use Khill\Lavacharts\Charts\PieChart;
-use Khill\Lavacharts\Charts\SankeyChart;
-use Khill\Lavacharts\Charts\ScatterChart;
-use Khill\Lavacharts\Charts\SteppedAreaChart;
-use Khill\Lavacharts\Charts\TableChart;
-use Khill\Lavacharts\Charts\TimelineChart;
-use Khill\Lavacharts\Charts\TreeMapChart;
-use Khill\Lavacharts\Charts\WordTreeChart;
-use Khill\Lavacharts\DataTables\DataTable;
+use Hypoid\Lavacharts\Charts\AnnotationChart;
+use Hypoid\Lavacharts\Charts\AreaChart;
+use Hypoid\Lavacharts\Charts\BarChart;
+use Hypoid\Lavacharts\Charts\BubbleChart;
+use Hypoid\Lavacharts\Charts\CalendarChart;
+use Hypoid\Lavacharts\Charts\CandlestickChart;
+use Hypoid\Lavacharts\Charts\Chart;
+use Hypoid\Lavacharts\Charts\ColumnChart;
+use Hypoid\Lavacharts\Charts\ComboChart;
+use Hypoid\Lavacharts\Charts\DonutChart;
+use Hypoid\Lavacharts\Charts\GanttChart;
+use Hypoid\Lavacharts\Charts\GaugeChart;
+use Hypoid\Lavacharts\Charts\GeoChart;
+use Hypoid\Lavacharts\Charts\HistogramChart;
+use Hypoid\Lavacharts\Charts\LineChart;
+use Hypoid\Lavacharts\Charts\OrgChart;
+use Hypoid\Lavacharts\Charts\PieChart;
+use Hypoid\Lavacharts\Charts\SankeyChart;
+use Hypoid\Lavacharts\Charts\ScatterChart;
+use Hypoid\Lavacharts\Charts\SteppedAreaChart;
+use Hypoid\Lavacharts\Charts\TableChart;
+use Hypoid\Lavacharts\Charts\TimelineChart;
+use Hypoid\Lavacharts\Charts\TreeMapChart;
+use Hypoid\Lavacharts\Charts\WordTreeChart;
+use Hypoid\Lavacharts\DataTables\DataTable;
 
 class ChartProvider
 {

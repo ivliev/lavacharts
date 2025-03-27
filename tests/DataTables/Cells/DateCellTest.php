@@ -1,14 +1,14 @@
 <?php
 
-namespace Khill\Lavacharts\Tests\DataTables\Cells;
+namespace Hypoid\Lavacharts\Tests\DataTables\Cells;
 
-use Khill\Lavacharts\Tests\ProvidersTestCase;
-use Khill\Lavacharts\DataTables\Cells\DateCell;
+use Hypoid\Lavacharts\Tests\ProvidersTestCase;
+use Hypoid\Lavacharts\DataTables\Cells\DateCell;
 
 class DateCellTest extends ProvidersTestCase
 {
     /**
-     * @covers \Khill\Lavacharts\DataTables\Cells\DateCell::__construct
+     * @covers \Hypoid\Lavacharts\DataTables\Cells\DateCell::__construct
      */
     public function testConstructorArgs()
     {
@@ -25,8 +25,8 @@ class DateCellTest extends ProvidersTestCase
 
 
     /**
-     * @covers \Khill\Lavacharts\DataTables\Cells\DateCell::parseString
-     * @covers \Khill\Lavacharts\DataTables\Cells\DateCell::__toString
+     * @covers \Hypoid\Lavacharts\DataTables\Cells\DateCell::parseString
+     * @covers \Hypoid\Lavacharts\DataTables\Cells\DateCell::__toString
      */
     public function testParseStringWithNoFormat()
     {
@@ -38,8 +38,8 @@ class DateCellTest extends ProvidersTestCase
     }
 
     /**
-     * @covers \Khill\Lavacharts\DataTables\Cells\DateCell::parseString
-     * @covers \Khill\Lavacharts\DataTables\Cells\DateCell::__toString
+     * @covers \Hypoid\Lavacharts\DataTables\Cells\DateCell::parseString
+     * @covers \Hypoid\Lavacharts\DataTables\Cells\DateCell::__toString
      */
     public function testParseStringWithFormat()
     {
@@ -51,7 +51,7 @@ class DateCellTest extends ProvidersTestCase
 
     /**
      * @expectedException \Exception
-     * @covers \Khill\Lavacharts\DataTables\Cells\DateCell::parseString
+     * @covers \Hypoid\Lavacharts\DataTables\Cells\DateCell::parseString
      */
     public function testParseStringWithBadDateTimeString()
     {
@@ -60,8 +60,8 @@ class DateCellTest extends ProvidersTestCase
 
     /**
      * @dataProvider nonStringOrNullProvider
-     * @expectedException \Khill\Lavacharts\Exceptions\InvalidDateTimeString
-     * @covers \Khill\Lavacharts\DataTables\Cells\DateCell::parseString
+     * @expectedException \Hypoid\Lavacharts\Exceptions\InvalidDateTimeString
+     * @covers \Hypoid\Lavacharts\DataTables\Cells\DateCell::parseString
      */
     public function testParseStringWithBadTypesForDateTime($badTypes)
     {
@@ -69,8 +69,8 @@ class DateCellTest extends ProvidersTestCase
     }
 
     /**
-     * @expectedException \Khill\Lavacharts\Exceptions\InvalidDateTimeFormat
-     * @covers \Khill\Lavacharts\DataTables\Cells\DateCell::parseString
+     * @expectedException \Hypoid\Lavacharts\Exceptions\InvalidDateTimeFormat
+     * @covers \Hypoid\Lavacharts\DataTables\Cells\DateCell::parseString
      */
     public function testParseStringWithBadFormatString()
     {
@@ -79,7 +79,7 @@ class DateCellTest extends ProvidersTestCase
 
     /**
      * @dataProvider nonStringProvider
-     * @covers \Khill\Lavacharts\DataTables\Cells\DateCell::parseString
+     * @covers \Hypoid\Lavacharts\DataTables\Cells\DateCell::parseString
      */
     public function testParseStringWithBadTypesForFormat()
     {
@@ -88,7 +88,7 @@ class DateCellTest extends ProvidersTestCase
 
     /**
      * @depends testConstructorArgs
-     * @covers \Khill\Lavacharts\DataTables\Cells\DateCell::jsonSerialize
+     * @covers \Hypoid\Lavacharts\DataTables\Cells\DateCell::jsonSerialize
      */
     public function testJsonSerialization()
     {

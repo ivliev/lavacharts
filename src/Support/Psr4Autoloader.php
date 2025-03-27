@@ -1,6 +1,6 @@
 <?php
 
-namespace Khill\Lavacharts\Support;
+namespace Hypoid\Lavacharts\Support;
 
 /**
  * PSR4 Autoloader Class
@@ -8,7 +8,7 @@ namespace Khill\Lavacharts\Support;
  * As implemented by PHP FIG
  *
  * @codeCoverageIgnore
- * @package  Khill\Lavacharts
+ * @package  Hypoid\Lavacharts
  * @since    2.4.0
  * @author   PHP-FIG
  * @link     http://www.php-fig.org/psr/psr-4/examples PSR4 Examples

@@ -1,8 +1,8 @@
 <?php
 
-namespace Khill\Lavacharts\Charts;
+namespace Hypoid\Lavacharts\Charts;
 
-use \Khill\Lavacharts\Support\Traits\PngRenderableTrait as PngRenderable;
+use \Hypoid\Lavacharts\Support\Traits\PngRenderableTrait as PngRenderable;
 
 /**
  * CandlestickChart Class
@@ -12,7 +12,7 @@ use \Khill\Lavacharts\Support\Traits\PngRenderableTrait as PngRenderable;
  * and the fourth as size.
  *
  *
- * @package   Khill\Lavacharts\Charts
+ * @package   Hypoid\Lavacharts\Charts
  * @since     3.1.0
  * @author    Kevin Hill <kevinkhill@gmail.com>
  * @copyright (c) 2017, KHill Designs

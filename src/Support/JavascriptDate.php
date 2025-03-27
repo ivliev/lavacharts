@@ -1,6 +1,6 @@
 <?php
 
-namespace Khill\Lavacharts\Support;
+namespace Hypoid\Lavacharts\Support;
 
 use Carbon\Carbon;
 

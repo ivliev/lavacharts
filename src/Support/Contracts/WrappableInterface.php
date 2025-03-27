@@ -1,13 +1,13 @@
 <?php
 
-namespace Khill\Lavacharts\Support\Contracts;
+namespace Hypoid\Lavacharts\Support\Contracts;
 
 /**
  * Interface WrappableInterface
  *
  * Classes that implement this can be wrapped for use in a Dashboard.
  *
- * @package   Khill\Lavacharts\Support\Contracts
+ * @package   Hypoid\Lavacharts\Support\Contracts
  * @since     3.1.0
  * @author    Kevin Hill <kevinkhill@gmail.com>
  * @copyright (c) 2017, KHill Designs

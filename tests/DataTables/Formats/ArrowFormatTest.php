@@ -1,12 +1,12 @@
 <?php
 
-namespace Khill\Lavacharts\Tests\Formats;
+namespace Hypoid\Lavacharts\Tests\Formats;
 
-use Khill\Lavacharts\Tests\ProvidersTestCase;
-use Khill\Lavacharts\DataTables\Formats\ArrowFormat;
+use Hypoid\Lavacharts\Tests\ProvidersTestCase;
+use Hypoid\Lavacharts\DataTables\Formats\ArrowFormat;
 
 /**
- * @property \Khill\Lavacharts\DataTables\Formats\ArrowFormat arrowFormat
+ * @property \Hypoid\Lavacharts\DataTables\Formats\ArrowFormat arrowFormat
  */
 class ArrowFormatTest extends ProvidersTestCase
 {
@@ -22,7 +22,7 @@ class ArrowFormatTest extends ProvidersTestCase
     }
 
     /**
-     * @covers \Khill\Lavacharts\DataTables\Formats\ArrowFormat
+     * @covers \Hypoid\Lavacharts\DataTables\Formats\ArrowFormat
      */
     public function testConstructorOptionAssignment()
     {
@@ -42,7 +42,7 @@ class ArrowFormatTest extends ProvidersTestCase
     }
 
     /**
-     * @covers \Khill\Lavacharts\DataTables\Formats\ArrowFormat::toJson()
+     * @covers \Hypoid\Lavacharts\DataTables\Formats\ArrowFormat::toJson()
      */
     public function testToJson()
     {
@@ -50,7 +50,7 @@ class ArrowFormatTest extends ProvidersTestCase
     }
 
     /**
-     * @covers \Khill\Lavacharts\DataTables\Formats\ArrowFormat::jsonSerialize()
+     * @covers \Hypoid\Lavacharts\DataTables\Formats\ArrowFormat::jsonSerialize()
      */
     public function testJsonSerialization()
     {

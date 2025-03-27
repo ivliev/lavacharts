@@ -1,14 +1,14 @@
 <?php
 
-namespace Khill\Lavacharts\Tests\DataTables\Rows;
+namespace Hypoid\Lavacharts\Tests\DataTables\Rows;
 
-use Khill\Lavacharts\Tests\ProvidersTestCase;
-use Khill\Lavacharts\DataTables\Rows\NullRow;
+use Hypoid\Lavacharts\Tests\ProvidersTestCase;
+use Hypoid\Lavacharts\DataTables\Rows\NullRow;
 
 class NullRowTest extends ProvidersTestCase
 {
     /**
-     * @covers \Khill\Lavacharts\DataTables\Rows\NullRow::__construct
+     * @covers \Hypoid\Lavacharts\DataTables\Rows\NullRow::__construct
      */
     public function testConstructorWithInt()
     {
@@ -22,9 +22,9 @@ class NullRowTest extends ProvidersTestCase
     }
 
     /**
-     * @covers \Khill\Lavacharts\DataTables\Rows\NullRow::__construct
+     * @covers \Hypoid\Lavacharts\DataTables\Rows\NullRow::__construct
      * @dataProvider nonIntProvider
-     * @expectedException \Khill\Lavacharts\Exceptions\InvalidParamType
+     * @expectedException \Hypoid\Lavacharts\Exceptions\InvalidParamType
      */
     public function testConstructorWithBadTypes($badTypes)
     {
@@ -33,7 +33,7 @@ class NullRowTest extends ProvidersTestCase
 
     /**
      * @depends testConstructorWithInt
-     * @covers \Khill\Lavacharts\DataTables\Rows\Row::jsonSerialize
+     * @covers \Hypoid\Lavacharts\DataTables\Rows\Row::jsonSerialize
      */
     public function testJsonSerialization()
     {

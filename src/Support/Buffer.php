@@ -1,15 +1,15 @@
 <?php
 
-namespace Khill\Lavacharts\Support;
+namespace Hypoid\Lavacharts\Support;
 
-use Khill\Lavacharts\Support\Contracts\JsonableInterface as Jsonable;
+use Hypoid\Lavacharts\Support\Contracts\JsonableInterface as Jsonable;
 
 /**
  * Class Buffer
  *
  * Uses for building string outputs to send to the browser
  *
- * @package   Khill\Lavacharts\Support
+ * @package   Hypoid\Lavacharts\Support
  * @author    Kevin Hill <kevinkhill@gmail.com>
  * @copyright (c) 2015, KHill Designs
  * @link      http://github.com/kevinkhill/lavacharts GitHub Repository Page

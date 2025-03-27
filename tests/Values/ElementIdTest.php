@@ -1,9 +1,9 @@
 <?php
 
-namespace Khill\Lavacharts\Tests\Values;
+namespace Hypoid\Lavacharts\Tests\Values;
 
-use Khill\Lavacharts\Tests\ProvidersTestCase;
-use Khill\Lavacharts\Values\ElementId;
+use Hypoid\Lavacharts\Tests\ProvidersTestCase;
+use Hypoid\Lavacharts\Values\ElementId;
 
 class ElementIdTest extends ProvidersTestCase
 {
@@ -16,7 +16,7 @@ class ElementIdTest extends ProvidersTestCase
 
     /**
      * @dataProvider nonStringProvider
-     * @expectedException \Khill\Lavacharts\Exceptions\InvalidElementId
+     * @expectedException \Hypoid\Lavacharts\Exceptions\InvalidElementId
      */
     public function testElementIdWithBadTypes($badTypes)
     {

@@ -1,17 +1,17 @@
 <?php
 
-namespace Khill\Lavacharts\DataTables\Rows;
+namespace Hypoid\Lavacharts\DataTables\Rows;
 
 use Carbon\Carbon;
-use Khill\Lavacharts\DataTables\Cells\NullCell;
-use Khill\Lavacharts\Values\StringValue;
-use Khill\Lavacharts\DataTables\Cells\Cell;
-use Khill\Lavacharts\DataTables\Cells\DateCell;
-use Khill\Lavacharts\DataTables\DataTable;
-use Khill\Lavacharts\Exceptions\InvalidCellCount;
-use Khill\Lavacharts\Exceptions\InvalidColumnIndex;
-use Khill\Lavacharts\Exceptions\InvalidDate;
-use Khill\Lavacharts\Exceptions\InvalidRowDefinition;
+use Hypoid\Lavacharts\DataTables\Cells\NullCell;
+use Hypoid\Lavacharts\Values\StringValue;
+use Hypoid\Lavacharts\DataTables\Cells\Cell;
+use Hypoid\Lavacharts\DataTables\Cells\DateCell;
+use Hypoid\Lavacharts\DataTables\DataTable;
+use Hypoid\Lavacharts\Exceptions\InvalidCellCount;
+use Hypoid\Lavacharts\Exceptions\InvalidColumnIndex;
+use Hypoid\Lavacharts\Exceptions\InvalidDate;
+use Hypoid\Lavacharts\Exceptions\InvalidRowDefinition;
 
 /**
  * Row Object
@@ -19,7 +19,7 @@ use Khill\Lavacharts\Exceptions\InvalidRowDefinition;
  * The row object contains all the data for a row, stored in an array, indexed by columns.
  *
  *
- * @package   Khill\Lavacharts\DataTables\Rows
+ * @package   Hypoid\Lavacharts\DataTables\Rows
  * @since     3.0.0
  * @author    Kevin Hill <kevinkhill@gmail.com>
  * @copyright (c) 2017, KHill Designs
@@ -32,7 +32,7 @@ class Row implements \ArrayAccess, \JsonSerializable
     /**
      * Row values
      *
-     * @var \Khill\Lavacharts\DataTables\Cells\Cell[]
+     * @var \Hypoid\Lavacharts\DataTables\Cells\Cell[]
      */
     protected $values;
 
@@ -69,12 +69,12 @@ class Row implements \ArrayAccess, \JsonSerializable
     /**
      * Creates a new Row object from an array of values.
      *
-     * @param \Khill\Lavacharts\DataTables\DataTable $datatable
+     * @param \Hypoid\Lavacharts\DataTables\DataTable $datatable
      * @param  array                                 $valueArray Array of values to assign to the row.
-     * @return \Khill\Lavacharts\DataTables\Rows\Row
-     * @throws \Khill\Lavacharts\Exceptions\InvalidCellCount
-     * @throws \Khill\Lavacharts\Exceptions\InvalidDate
-     * @throws \Khill\Lavacharts\Exceptions\InvalidRowDefinition
+     * @return \Hypoid\Lavacharts\DataTables\Rows\Row
+     * @throws \Hypoid\Lavacharts\Exceptions\InvalidCellCount
+     * @throws \Hypoid\Lavacharts\Exceptions\InvalidDate
+     * @throws \Hypoid\Lavacharts\Exceptions\InvalidRowDefinition
      */
     public static function create(DataTable $datatable, $valueArray)
     {
@@ -138,8 +138,8 @@ class Row implements \ArrayAccess, \JsonSerializable
      * Returns a column value from the Row.
      *
      * @param  int $columnIndex Column value to fetch from the row.
-     * @throws \Khill\Lavacharts\Exceptions\InvalidColumnIndex
-     * @return \Khill\Lavacharts\DataTables\Cells\Cell
+     * @throws \Hypoid\Lavacharts\Exceptions\InvalidColumnIndex
+     * @return \Hypoid\Lavacharts\DataTables\Cells\Cell
      */
     public function getCell($columnIndex)
     {
@@ -155,7 +155,7 @@ class Row implements \ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public function jsonSerialize()
+    public function jsonSerialize() : mixed
     {
         return ['c' => $this->values];
     }
@@ -164,7 +164,7 @@ class Row implements \ArrayAccess, \JsonSerializable
      * @param mixed $offset
      * @param mixed $value
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value):void
     {
         if (is_null($offset)) {
             $this->values[] = $value;
@@ -177,7 +177,7 @@ class Row implements \ArrayAccess, \JsonSerializable
      * @param mixed $offset
      * @return bool
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset):bool
     {
         return isset($this->values[$offset]);
     }
@@ -185,7 +185,7 @@ class Row implements \ArrayAccess, \JsonSerializable
     /**
      * @param mixed $offset
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset):void
     {
         unset($this->values[$offset]);
     }
@@ -194,7 +194,7 @@ class Row implements \ArrayAccess, \JsonSerializable
      * @param mixed $offset
      * @return mixed|null
      */
-    public function offsetGet($offset)
+    public function offsetGet($offset):mixed
     {
         return isset($this->values[$offset]) ? $this->values[$offset] : null;
     }

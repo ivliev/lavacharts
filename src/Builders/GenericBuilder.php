@@ -1,16 +1,16 @@
 <?php
 
-namespace Khill\Lavacharts\Builders;
+namespace Hypoid\Lavacharts\Builders;
 
-use Khill\Lavacharts\Values\Label;
-use Khill\Lavacharts\Values\ElementId;
+use Hypoid\Lavacharts\Values\Label;
+use Hypoid\Lavacharts\Values\ElementId;
 
 /**
  * Class GenericBuilder
  *
  * This class will provide some common methods to the other builders.
  *
- * @package    Khill\Lavacharts\Builders
+ * @package    Hypoid\Lavacharts\Builders
  * @since      3.1.0
  * @author     Kevin Hill <kevinkhill@gmail.com>
  * @copyright  (c) 2017, KHill Designs
@@ -23,23 +23,23 @@ class GenericBuilder
     /**
      * The chart's unique label.
      *
-     * @var \Khill\Lavacharts\Values\Label
+     * @var \Hypoid\Lavacharts\Values\Label
      */
     protected $label = null;
 
     /**
      * The chart's unique elementId.
      *
-     * @var \Khill\Lavacharts\Values\ElementId
+     * @var \Hypoid\Lavacharts\Values\ElementId
      */
     protected $elementId = null;
 
     /**
      * Creates and sets the label for the chart.
      *
-     * @param  string|\Khill\Lavacharts\Values\Label $label
+     * @param  string|\Hypoid\Lavacharts\Values\Label $label
      * @return self
-     * @throws \Khill\Lavacharts\Exceptions\InvalidLabel
+     * @throws \Hypoid\Lavacharts\Exceptions\InvalidLabel
      */
     public function setLabel($label)
     {
@@ -51,9 +51,9 @@ class GenericBuilder
     /**
      * Creates and sets the elementId for the chart.
      *
-     * @param  string|\Khill\Lavacharts\Values\ElementId $elementId
+     * @param  string|\Hypoid\Lavacharts\Values\ElementId $elementId
      * @return self
-     * @throws \Khill\Lavacharts\Exceptions\InvalidElementId
+     * @throws \Hypoid\Lavacharts\Exceptions\InvalidElementId
      */
     public function setElementId($elementId)
     {

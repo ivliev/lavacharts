@@ -1,8 +1,8 @@
 <?php
 
-namespace Khill\Lavacharts\DataTables\Rows;
+namespace Hypoid\Lavacharts\DataTables\Rows;
 
-use Khill\Lavacharts\Exceptions\InvalidParamType;
+use Hypoid\Lavacharts\Exceptions\InvalidParamType;
 
 /**
  * NullRow Object
@@ -10,7 +10,7 @@ use Khill\Lavacharts\Exceptions\InvalidParamType;
  * The null row object is used to add an empty row to the datatable.
  *
  *
- * @package   Khill\Lavacharts\DataTables\Rows
+ * @package   Hypoid\Lavacharts\DataTables\Rows
  * @since     3.0.0
  * @author    Kevin Hill <kevinkhill@gmail.com>
  * @copyright (c) 2017, KHill Designs
@@ -24,7 +24,7 @@ class NullRow extends Row
      * Creates a new NullRow object
      *
      * @param  int $numOfCols Number of null columns to create.
-     * @throws \Khill\Lavacharts\Exceptions\InvalidParamType
+     * @throws \Hypoid\Lavacharts\Exceptions\InvalidParamType
      */
     public function __construct($numOfCols)
     {

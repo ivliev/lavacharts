@@ -1,9 +1,9 @@
 <?php
 
-namespace Khill\Lavacharts\Tests\Dashboards\Filters;
+namespace Hypoid\Lavacharts\Tests\Dashboards\Filters;
 
-use \Khill\Lavacharts\Dashboards\Filters\CategoryFilter;
-use \Khill\Lavacharts\Tests\ProvidersTestCase;
+use \Hypoid\Lavacharts\Dashboards\Filters\CategoryFilter;
+use \Hypoid\Lavacharts\Tests\ProvidersTestCase;
 
 class CategoryFilterTest extends ProvidersTestCase
 {
@@ -23,7 +23,7 @@ class CategoryFilterTest extends ProvidersTestCase
 
     /**
      * @depends testSettingColumnLabelWithConstructor
-     * @covers \Khill\Lavacharts\Dashboards\Filters\CategoryFilter::getType
+     * @covers \Hypoid\Lavacharts\Dashboards\Filters\CategoryFilter::getType
      */
     public function testGetTypeMethodAndStaticReferences()
     {
@@ -34,7 +34,7 @@ class CategoryFilterTest extends ProvidersTestCase
     }
 
     /**
-     * @expectedException \Khill\Lavacharts\Exceptions\InvalidParamType
+     * @expectedException \Hypoid\Lavacharts\Exceptions\InvalidParamType
      */
     public function testSettingColumnIndexOrLabelWithConstructorAndBadValues()
     {
@@ -46,7 +46,7 @@ class CategoryFilterTest extends ProvidersTestCase
 
     /**
      * @depends testSettingColumnIndexWithConstructor
-     * covers \Khill\Lavacharts\Dashboards\Filters\CategoryFilter::useFormattedValue
+     * covers \Hypoid\Lavacharts\Dashboards\Filters\CategoryFilter::useFormattedValue
      */
     public function testUseFormattedValue()
     {
@@ -61,7 +61,7 @@ class CategoryFilterTest extends ProvidersTestCase
 
     /**
      * @depends testSettingColumnLabelWithConstructor
-     * @covers \Khill\Lavacharts\Dashboards\Filters\CategoryFilter::jsonSerialize
+     * @covers \Hypoid\Lavacharts\Dashboards\Filters\CategoryFilter::jsonSerialize
      */
     public function testJsonSerialization()
     {

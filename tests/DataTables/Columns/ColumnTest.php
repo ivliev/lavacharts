@@ -1,9 +1,9 @@
 <?php
 
-namespace Khill\Lavacharts\Tests\DataTables\Columns;
+namespace Hypoid\Lavacharts\Tests\DataTables\Columns;
 
-use Khill\Lavacharts\Tests\ProvidersTestCase;
-use Khill\Lavacharts\DataTables\Columns\Column;
+use Hypoid\Lavacharts\Tests\ProvidersTestCase;
+use Hypoid\Lavacharts\DataTables\Columns\Column;
 
 /**
  * @property \Mockery\Mock mockRole
@@ -15,17 +15,17 @@ class ColumnTest extends ProvidersTestCase
     {
         parent::setUp();
 
-        $this->mockRole   = \Mockery::mock('\Khill\Lavacharts\Values\Role')
+        $this->mockRole   = \Mockery::mock('\Hypoid\Lavacharts\Values\Role')
                                     ->shouldReceive('__toString')
                                     ->zeroOrMoreTimes()
                                     ->andReturn('interval')
                                     ->getMock();
 
-        $this->mockFormat = \Mockery::mock('\Khill\Lavacharts\DataTables\Formats\NumberFormat')->makePartial();
+        $this->mockFormat = \Mockery::mock('\Hypoid\Lavacharts\DataTables\Formats\NumberFormat')->makePartial();
     }
 
     /**
-     * @covers \Khill\Lavacharts\DataTables\Columns\Column::__construct
+     * @covers \Hypoid\Lavacharts\DataTables\Columns\Column::__construct
      */
     public function testConstructorWithType()
     {
@@ -36,7 +36,7 @@ class ColumnTest extends ProvidersTestCase
 
     /**
      * @depends testConstructorWithType
-     * @covers \Khill\Lavacharts\DataTables\Columns\Column::__construct
+     * @covers \Hypoid\Lavacharts\DataTables\Columns\Column::__construct
      */
     public function testConstructorWithTypeAndLabel()
     {
@@ -47,29 +47,29 @@ class ColumnTest extends ProvidersTestCase
 
     /**
      * @depends testConstructorWithTypeAndLabel
-     * @covers \Khill\Lavacharts\DataTables\Columns\Column::__construct
+     * @covers \Hypoid\Lavacharts\DataTables\Columns\Column::__construct
      */
     public function testConstructorWithTypeAndLabelAndFormat()
     {
         $column = new Column('number', 'MyLabel', $this->mockFormat);
 
-        $this->assertInstanceOf('\Khill\Lavacharts\DataTables\Formats\NumberFormat', $this->inspect($column, 'format'));
+        $this->assertInstanceOf('\Hypoid\Lavacharts\DataTables\Formats\NumberFormat', $this->inspect($column, 'format'));
     }
 
     /**
      * @depends testConstructorWithTypeAndLabelAndFormat
-     * @covers \Khill\Lavacharts\DataTables\Columns\Column::__construct
+     * @covers \Hypoid\Lavacharts\DataTables\Columns\Column::__construct
      */
     public function testConstructorWithTypeAndLabelAndFormatAndRole()
     {
         $column = new Column('number', 'MyLabel', $this->mockFormat, $this->mockRole);
 
-        $this->assertInstanceOf('\Khill\Lavacharts\Values\Role', $this->inspect($column, 'role'));
+        $this->assertInstanceOf('\Hypoid\Lavacharts\Values\Role', $this->inspect($column, 'role'));
     }
 
     /**
      * @depends testConstructorWithType
-     * @covers \Khill\Lavacharts\DataTables\Columns\Column::getType
+     * @covers \Hypoid\Lavacharts\DataTables\Columns\Column::getType
      */
     public function testGetType()
     {
@@ -80,7 +80,7 @@ class ColumnTest extends ProvidersTestCase
 
     /**
      * @depends testConstructorWithTypeAndLabel
-     * @covers \Khill\Lavacharts\DataTables\Columns\Column::getLabel
+     * @covers \Hypoid\Lavacharts\DataTables\Columns\Column::getLabel
      */
     public function testGetLabel()
     {
@@ -91,7 +91,7 @@ class ColumnTest extends ProvidersTestCase
 
     /**
      * @depends testConstructorWithTypeAndLabelAndFormat
-     * @covers \Khill\Lavacharts\DataTables\Columns\Column::isFormatted
+     * @covers \Hypoid\Lavacharts\DataTables\Columns\Column::isFormatted
      */
     public function testIsFormatted()
     {
@@ -101,17 +101,17 @@ class ColumnTest extends ProvidersTestCase
     }
 
     /**
-     * @covers \Khill\Lavacharts\DataTables\Columns\Column::getFormat
+     * @covers \Hypoid\Lavacharts\DataTables\Columns\Column::getFormat
      */
     public function testGetFormat()
     {
         $column = new Column('number', 'MyLabel', $this->mockFormat);
 
-        $this->assertInstanceOf('\Khill\Lavacharts\DataTables\Formats\NumberFormat', $column->getFormat());
+        $this->assertInstanceOf('\Hypoid\Lavacharts\DataTables\Formats\NumberFormat', $column->getFormat());
     }
 
     /**
-     * @covers \Khill\Lavacharts\DataTables\Columns\Column::getRole
+     * @covers \Hypoid\Lavacharts\DataTables\Columns\Column::getRole
      */
     public function testGetRole()
     {
@@ -122,7 +122,7 @@ class ColumnTest extends ProvidersTestCase
 
     /**
      * @depends testConstructorWithTypeAndLabelAndFormatAndRole
-     * @covers \Khill\Lavacharts\DataTables\Columns\Column::jsonSerialize
+     * @covers \Hypoid\Lavacharts\DataTables\Columns\Column::jsonSerialize
      */
     public function testJsonSerialization()
     {

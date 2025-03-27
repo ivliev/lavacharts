@@ -1,6 +1,6 @@
 <?php
 
-namespace Khill\Lavacharts\Charts;
+namespace Hypoid\Lavacharts\Charts;
 
 /**
  * Table Chart Class
@@ -9,7 +9,7 @@ namespace Khill\Lavacharts\Charts;
  * Can be searched by rendering as a wrapper and binding to a control within a dashboard.
  *
  *
- * @package   Khill\Lavacharts\Charts
+ * @package   Hypoid\Lavacharts\Charts
  * @since     3.0.0
  * @author    Peter Draznik <peter.draznik@38thStreetStudios.com>
  * @author    Kevin Hill <kevinkhill@gmail.com>

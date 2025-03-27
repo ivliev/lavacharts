@@ -1,13 +1,13 @@
 <?php
 
-namespace Khill\Lavacharts\Support\Contracts;
+namespace Hypoid\Lavacharts\Support\Contracts;
 
 /**
  * Interface VisualizationInterface
  *
  * Classes that implement this provide a method for custom JSON output.
  *
- * @package   Khill\Lavacharts\Support\Contracts
+ * @package   Hypoid\Lavacharts\Support\Contracts
  * @since     3.1.0
  * @author    Kevin Hill <kevinkhill@gmail.com>
  * @copyright (c) 2017, KHill Designs

@@ -1,12 +1,12 @@
 <?php
 
-namespace Khill\Lavacharts\Tests;
+namespace Hypoid\Lavacharts\Tests;
 
-use Khill\Lavacharts\Charts\ChartFactory;
-use Khill\Lavacharts\Lavacharts;
+use Hypoid\Lavacharts\Charts\ChartFactory;
+use Hypoid\Lavacharts\Lavacharts;
 
 /**
- * @property \Khill\Lavacharts\Lavacharts lava
+ * @property \Hypoid\Lavacharts\Lavacharts lava
  */
 class LavachartsTest extends ProvidersTestCase
 {
@@ -71,7 +71,7 @@ class LavachartsTest extends ProvidersTestCase
 
     /**
      * @dataProvider nonStringProvider
-     * @expectedException \Khill\Lavacharts\Exceptions\InvalidLabel
+     * @expectedException \Hypoid\Lavacharts\Exceptions\InvalidLabel
      */
     public function testExistsWithNonStringInputForLabel($badTypes)
     {
@@ -164,7 +164,7 @@ class LavachartsTest extends ProvidersTestCase
 
     /**
      * @depends testCreateDataTableViaAlias
-     * @expectedException \Khill\Lavacharts\Exceptions\InvalidDivDimensions
+     * @expectedException \Hypoid\Lavacharts\Exceptions\InvalidDivDimensions
      */
     public function testRenderChartWithDivAndBadDimensionType()
     {
@@ -175,7 +175,7 @@ class LavachartsTest extends ProvidersTestCase
 
     /**
      * @depends testCreateDataTableViaAlias
-     * @expectedException \Khill\Lavacharts\Exceptions\InvalidConfigValue
+     * @expectedException \Hypoid\Lavacharts\Exceptions\InvalidConfigValue
      */
     public function testRenderChartWithDivAndDimensionsWithBadValues()
     {
@@ -208,7 +208,7 @@ class LavachartsTest extends ProvidersTestCase
     }
 
     /**
-     * @expectedException \Khill\Lavacharts\Exceptions\InvalidLavaObject
+     * @expectedException \Hypoid\Lavacharts\Exceptions\InvalidLavaObject
      */
     public function testRenderAliasWithInvalidLavaObject()
     {
@@ -216,7 +216,7 @@ class LavachartsTest extends ProvidersTestCase
     }
 
     /**
-     * @expectedException \Khill\Lavacharts\Exceptions\InvalidLabel
+     * @expectedException \Hypoid\Lavacharts\Exceptions\InvalidLabel
      */
     public function testCreateChartWithMissingLabel()
     {
@@ -224,7 +224,7 @@ class LavachartsTest extends ProvidersTestCase
     }
 
     /**
-     * @expectedException \Khill\Lavacharts\Exceptions\InvalidLabel
+     * @expectedException \Hypoid\Lavacharts\Exceptions\InvalidLabel
      */
     public function testCreateChartWithInvalidLabel()
     {
@@ -236,7 +236,7 @@ class LavachartsTest extends ProvidersTestCase
      */
     public function testStoreChartIntoVolcano()
     {
-        $mockPieChart = \Mockery::mock('\Khill\Lavacharts\Charts\PieChart', [
+        $mockPieChart = \Mockery::mock('\Hypoid\Lavacharts\Charts\PieChart', [
             $this->mockLabel,
             $this->getMockDataTable()
         ])->shouldReceive('getType')
@@ -251,7 +251,7 @@ class LavachartsTest extends ProvidersTestCase
         $charts = $this->inspect($volcano, 'charts');
 
         $this->assertArrayHasKey('PieChart', $charts);
-        $this->assertInstanceOf('\Khill\Lavacharts\Charts\PieChart', $charts['PieChart']['MockLabel']);
+        $this->assertInstanceOf('\Hypoid\Lavacharts\Charts\PieChart', $charts['PieChart']['MockLabel']);
     }
 
     public function testJsapiMethodWithCoreJsTracking()

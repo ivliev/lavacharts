@@ -1,13 +1,13 @@
 <?php
 
-namespace Khill\Lavacharts\DataTables\Columns;
+namespace Hypoid\Lavacharts\DataTables\Columns;
 
-use Khill\Lavacharts\DataTables\Formats\Format;
-use Khill\Lavacharts\Exceptions\InvalidColumnRole;
-use Khill\Lavacharts\Exceptions\InvalidColumnType;
-use Khill\Lavacharts\Support\Customizable;
-use Khill\Lavacharts\Values\Role;
-use Khill\Lavacharts\Values\StringValue;
+use Hypoid\Lavacharts\DataTables\Formats\Format;
+use Hypoid\Lavacharts\Exceptions\InvalidColumnRole;
+use Hypoid\Lavacharts\Exceptions\InvalidColumnType;
+use Hypoid\Lavacharts\Support\Customizable;
+use Hypoid\Lavacharts\Values\Role;
+use Hypoid\Lavacharts\Values\StringValue;
 
 /**
  * Column Object
@@ -15,7 +15,7 @@ use Khill\Lavacharts\Values\StringValue;
  * The Column object is used to define the different columns for a DataTable.
  *
  *
- * @package   Khill\Lavacharts\DataTables\Columns
+ * @package   Hypoid\Lavacharts\DataTables\Columns
  * @since     3.1.0
  * @author    Kevin Hill <kevinkhill@gmail.com>
  * @copyright (c) 2017, KHill Designs
@@ -42,14 +42,14 @@ class ColumnBuilder
     /**
      * Column formatter.
      *
-     * @var \Khill\Lavacharts\DataTables\Formats\Format
+     * @var \Hypoid\Lavacharts\DataTables\Formats\Format
      */
     private $format = null;
 
     /**
      * Column role.
      *
-     * @var \Khill\Lavacharts\Values\Role
+     * @var \Hypoid\Lavacharts\Values\Role
      */
     private $role = null;
 
@@ -64,12 +64,12 @@ class ColumnBuilder
      * Sets the type of column.
      *
      * @param  string $type
-     * @throws \Khill\Lavacharts\Exceptions\InvalidColumnType
+     * @throws \Hypoid\Lavacharts\Exceptions\InvalidColumnType
      */
     public function setType($type)
     {
         if (StringValue::isNonEmpty($type) === false) {
-            throw new InvalidColumnType($type);
+            throw new InvalidColumnType($type, 'string');//--------------------
         }
 
         $this->type = $type;
@@ -88,9 +88,9 @@ class ColumnBuilder
     /**
      * Sets the column formatter.
      *
-     * @param \Khill\Lavacharts\DataTables\Formats\Format $format
+     * @param \Hypoid\Lavacharts\DataTables\Formats\Format $format
      */
-    public function setFormat(Format $format = null)
+    public function setFormat(?Format $format = null)
     {
         $this->format = $format;
     }
@@ -99,7 +99,7 @@ class ColumnBuilder
      * Sets the column role.
      *
      * @param  string $role
-     * @throws \Khill\Lavacharts\Exceptions\InvalidColumnRole
+     * @throws \Hypoid\Lavacharts\Exceptions\InvalidColumnRole
      */
     public function setRole($role)
     {
@@ -121,7 +121,7 @@ class ColumnBuilder
     /**
      * Creates a new column instance with the set values.
      *
-     * @return \Khill\Lavacharts\DataTables\Columns\Column
+     * @return \Hypoid\Lavacharts\DataTables\Columns\Column
      */
     public function getResult()
     {

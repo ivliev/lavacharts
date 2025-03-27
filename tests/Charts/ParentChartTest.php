@@ -1,11 +1,11 @@
 <?php
 
-namespace Khill\Lavacharts\Tests\Charts;
+namespace Hypoid\Lavacharts\Tests\Charts;
 
-use \Khill\Lavacharts\Tests\ProvidersTestCase;
+use \Hypoid\Lavacharts\Tests\ProvidersTestCase;
 
 /**
- * @property \Khill\Lavacharts\Tests\Charts\MockChart mockChart
+ * @property \Hypoid\Lavacharts\Tests\Charts\MockChart mockChart
  */
 class ChartAndTraitsTest extends ProvidersTestCase
 {
@@ -13,7 +13,7 @@ class ChartAndTraitsTest extends ProvidersTestCase
     {
         parent::setUp();
 
-        $label = \Mockery::mock('\Khill\Lavacharts\Values\Label', ['TestChart'])->makePartial();
+        $label = \Mockery::mock('\Hypoid\Lavacharts\Values\Label', ['TestChart'])->makePartial();
 
         $this->mockChart = new MockChart($label, $this->partialDataTable);
     }
@@ -27,7 +27,7 @@ class ChartAndTraitsTest extends ProvidersTestCase
     {
         $this->mockChart->datatable($this->partialDataTable);
 
-        $this->assertInstanceOf('\Khill\Lavacharts\DataTables\DataTable', $this->mockChart->getDataTable());
+        $this->assertInstanceOf('\Hypoid\Lavacharts\DataTables\DataTable', $this->mockChart->getDataTable());
     }
 
     public function testCustomizeMethodToSetOptions()

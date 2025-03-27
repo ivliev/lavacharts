@@ -1,5 +1,5 @@
 <?php
-    use Khill\Lavacharts\DataTables\DataFactory;
+    use Hypoid\Lavacharts\DataTables\DataFactory;
 
     $data = DataFactory::arrayToDataTable([
         ['Mon', 20, 28, 38, 45],

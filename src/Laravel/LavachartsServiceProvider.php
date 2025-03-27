@@ -1,8 +1,8 @@
 <?php
 
-namespace Khill\Lavacharts\Laravel;
+namespace Hypoid\Lavacharts\Laravel;
 
-use \Khill\Lavacharts\Lavacharts;
+use \Hypoid\Lavacharts\Lavacharts;
 use \Illuminate\Support\ServiceProvider;
 use \Illuminate\Foundation\AliasLoader;
 
@@ -13,7 +13,7 @@ use \Illuminate\Foundation\AliasLoader;
  * The Alias is also automatically loaded so you can access Lavacharts with the "Lava::" syntax
  *
  *
- * @package    Khill\Lavacharts\Laravel
+ * @package    Hypoid\Lavacharts\Laravel
  * @since      2.0.0
  * @author     Kevin Hill <kevinkhill@gmail.com>
  * @copyright  (c) 2017, KHill Designs
@@ -26,6 +26,7 @@ class LavachartsServiceProvider extends ServiceProvider
     protected $defer = true;
 
     private $configFile = 'lavacharts.php';
+    private $configPath;
 
     /**
      * Create a new service provider instance.
@@ -41,13 +42,6 @@ class LavachartsServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        /**
-         * If the package method exists, we're using Laravel 4
-         */
-        if (method_exists($this, 'package')) {
-            $this->package('khill/lavacharts');
-        }
-
         include __DIR__.'/BladeTemplateExtensions.php';
 
         $this->publishes([
@@ -67,7 +61,7 @@ class LavachartsServiceProvider extends ServiceProvider
 
         $this->app->booting(function() {
             $loader = AliasLoader::getInstance();
-            $loader->alias('Lava', 'Khill\Lavacharts\Laravel\LavachartsFacade');
+            $loader->alias('Lava', 'Hypoid\Lavacharts\Laravel\LavachartsFacade');
         });
 
     }

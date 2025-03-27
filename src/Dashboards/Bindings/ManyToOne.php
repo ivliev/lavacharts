@@ -1,15 +1,15 @@
 <?php
 
-namespace Khill\Lavacharts\Dashboards\Bindings;
+namespace Hypoid\Lavacharts\Dashboards\Bindings;
 
-use Khill\Lavacharts\Dashboards\Wrappers\ChartWrapper;
+use Hypoid\Lavacharts\Dashboards\Wrappers\ChartWrapper;
 
 /**
  * ManyToOne Binding Class
  *
  * Binds multiple ControlWrappers to a single ChartWrapper for use in dashboards.
  *
- * @package   Khill\Lavacharts\Dashboards\Bindings
+ * @package   Hypoid\Lavacharts\Dashboards\Bindings
  * @since     3.0.0
  * @author    Kevin Hill <kevinkhill@gmail.com>
  * @copyright (c) 2017, KHill Designs
@@ -30,7 +30,7 @@ class ManyToOne extends Binding
      * Creates the new Binding.
      *
      * @param  array                                              $controlWrappers
-     * @param  \Khill\Lavacharts\Dashboards\Wrappers\ChartWrapper $chartWrapper
+     * @param  \Hypoid\Lavacharts\Dashboards\Wrappers\ChartWrapper $chartWrapper
      */
     public function __construct(array $controlWrappers, ChartWrapper $chartWrapper)
     {

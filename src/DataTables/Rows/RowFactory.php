@@ -1,14 +1,14 @@
 <?php
 
-namespace Khill\Lavacharts\DataTables\Rows;
+namespace Hypoid\Lavacharts\DataTables\Rows;
 
 use ArrayAccess;
 use Carbon\Carbon;
-use Khill\Lavacharts\DataTables\DataTable;
-use Khill\Lavacharts\DataTables\Cells\DateCell;
-use Khill\Lavacharts\Exceptions\InvalidCellCount;
-use Khill\Lavacharts\Exceptions\InvalidRowDefinition;
-use Khill\Lavacharts\Support\Traits\ParameterValidatorsTrait as ParameterValidators;
+use Hypoid\Lavacharts\DataTables\DataTable;
+use Hypoid\Lavacharts\DataTables\Cells\DateCell;
+use Hypoid\Lavacharts\Exceptions\InvalidCellCount;
+use Hypoid\Lavacharts\Exceptions\InvalidRowDefinition;
+use Hypoid\Lavacharts\Support\Traits\ParameterValidatorsTrait as ParameterValidators;
 
 /**
  * RowFactory Class
@@ -16,7 +16,7 @@ use Khill\Lavacharts\Support\Traits\ParameterValidatorsTrait as ParameterValidat
  * The RowFactory creates new rows for the DataTables.
  *
  *
- * @package   Khill\Lavacharts\DataTables\Rows
+ * @package   Hypoid\Lavacharts\DataTables\Rows
  * @since     3.0.0
  * @author    Kevin Hill <kevinkhill@gmail.com>
  * @copyright (c) 2017, KHill Designs
@@ -31,7 +31,7 @@ class RowFactory
     /**
      * DataTable to reference when creating new rows.
      *
-     * @var \Khill\Lavacharts\DataTables\DataTable
+     * @var \Hypoid\Lavacharts\DataTables\DataTable
      */
     private $datatable;
 
@@ -39,7 +39,7 @@ class RowFactory
      * Creates a new RowFactory instance.
      *
      * @access public
-     * @param  \Khill\Lavacharts\DataTables\DataTable $datatable
+     * @param  \Hypoid\Lavacharts\DataTables\DataTable $datatable
      */
     public function __construct(DataTable $datatable)
     {
@@ -50,10 +50,10 @@ class RowFactory
      * Creates a new Row object from a collection of values.
      *
      * @param  array|ArrayAccess $rowDef Collection of values to assign to the row.
-     * @return \Khill\Lavacharts\DataTables\Rows\Row
-     * @throws \Khill\Lavacharts\Exceptions\InvalidCellCount
-     * @throws \Khill\Lavacharts\Exceptions\InvalidDateTimeString
-     * @throws \Khill\Lavacharts\Exceptions\InvalidRowDefinition
+     * @return \Hypoid\Lavacharts\DataTables\Rows\Row
+     * @throws \Hypoid\Lavacharts\Exceptions\InvalidCellCount
+     * @throws \Hypoid\Lavacharts\Exceptions\InvalidDateTimeString
+     * @throws \Hypoid\Lavacharts\Exceptions\InvalidRowDefinition
      */
     public function create($rowDef)
     {

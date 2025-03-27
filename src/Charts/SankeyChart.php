@@ -1,6 +1,6 @@
 <?php
 
-namespace Khill\Lavacharts\Charts;
+namespace Hypoid\Lavacharts\Charts;
 
 /**
  * SankeyChart Class
@@ -15,7 +15,7 @@ namespace Khill\Lavacharts\Charts;
  * to show how traffic flows from pages to other pages on your web site).
  *
  *
- * @package   Khill\Lavacharts\Charts
+ * @package   Hypoid\Lavacharts\Charts
  * @since     3.0.5
  * @author    Kevin Hill <kevinkhill@gmail.com>
  * @copyright (c) 2017, KHill Designs

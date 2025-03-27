@@ -1,6 +1,6 @@
 <?php
 
-namespace Khill\Lavacharts\Support;
+namespace Hypoid\Lavacharts\Support;
 
 /**
  * Class Customizable
@@ -9,7 +9,7 @@ namespace Khill\Lavacharts\Support;
  * has options, which can be set to configure / customize the final result once rendered.
  *
  *
- * @package    Khill\Lavacharts\Configs
+ * @package    Hypoid\Lavacharts\Configs
  * @since      3.0.5
  * @author     Kevin Hill <kevinkhill@gmail.com>
  * @copyright  (c) 2017, KHill Designs
@@ -124,9 +124,9 @@ class Customizable implements \ArrayAccess, \JsonSerializable
     /**
      * Custom serialization of the Options object.
      *
-     * @return array
+     * @return mixed
      */
-    public function jsonSerialize()
+    public function jsonSerialize():mixed
     {
         return $this->options;
     }
@@ -135,7 +135,7 @@ class Customizable implements \ArrayAccess, \JsonSerializable
      * @param mixed $offset
      * @param mixed $value
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet(mixed $offset, mixed $value): void
     {
         if (is_null($offset)) {
             $this->options[] = $value;
@@ -148,7 +148,7 @@ class Customizable implements \ArrayAccess, \JsonSerializable
      * @param mixed $offset
      * @return bool
      */
-    public function offsetExists($offset)
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->options[$offset]);
     }
@@ -156,7 +156,7 @@ class Customizable implements \ArrayAccess, \JsonSerializable
     /**
      * @param mixed $offset
      */
-    public function offsetUnset($offset)
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->options[$offset]);
     }
@@ -165,7 +165,7 @@ class Customizable implements \ArrayAccess, \JsonSerializable
      * @param mixed $offset
      * @return mixed|null
      */
-    public function offsetGet($offset)
+    public function offsetGet(mixed $offset): mixed
     {
         return isset($this->options[$offset]) ? $this->options[$offset] : null;
     }

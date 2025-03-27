@@ -1,23 +1,25 @@
 <?php
 
-namespace Khill\Lavacharts\Symfony\Bundle\Twig;
+namespace Hypoid\Lavacharts\Symfony\Bundle\Twig;
 
-use Khill\Lavacharts\Lavacharts;
-use Khill\Lavacharts\Charts\ChartFactory;
+use Hypoid\Lavacharts\Lavacharts;
+use Hypoid\Lavacharts\Charts\ChartFactory;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
 
-class LavachartsExtension extends \Twig_Extension
+class LavachartsExtension extends AbstractExtension
 {
     /**
      * The Lavacharts object passed in from the service container.
      *
-     * @var \Khill\Lavacharts\Lavacharts
+     * @var \Hypoid\Lavacharts\Lavacharts
      */
     private $lava;
 
     /**
      * LavachartsExtension constructor.
      *
-     * @param \Khill\Lavacharts\Lavacharts $lava
+     * @param \Hypoid\Lavacharts\Lavacharts $lava
      */
     public function __construct(Lavacharts $lava)
     {
@@ -43,7 +45,7 @@ class LavachartsExtension extends \Twig_Extension
         $renderFunctions = [];
 
         foreach ($renderableTypes as $type) {
-            $renderFunctions[] = new \Twig_SimpleFunction(strtolower($type),
+            $renderFunctions[] = new TwigFunction(strtolower($type),
                 function($label) use ($type) {
                     try {
                         $elementId = func_get_arg(1);
@@ -56,7 +58,7 @@ class LavachartsExtension extends \Twig_Extension
             );
         }
 
-        $renderFunctions[] = new \Twig_SimpleFunction('renderAll', function() {
+        $renderFunctions[] = new TwigFunction('renderAll', function() {
             return $this->lava->renderAll();
         });
 

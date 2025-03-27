@@ -1,6 +1,6 @@
 <?php
 
-namespace Khill\Lavacharts\Tests\Support;
+namespace Hypoid\Lavacharts\Tests\Support;
 
 class Foo {
     public $fooVar = 1;

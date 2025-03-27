@@ -1,18 +1,18 @@
 <?php
 
-namespace Khill\Lavacharts\Charts;
+namespace Hypoid\Lavacharts\Charts;
 
-use Khill\Lavacharts\Support\Customizable;
-use Khill\Lavacharts\DataTables\DataTable;
-use Khill\Lavacharts\Values\ElementId;
-use Khill\Lavacharts\Values\Label;
-use Khill\Lavacharts\Support\Traits\ElementIdTrait as HasElementId;
-use Khill\Lavacharts\Support\Traits\DataTableTrait as HasDataTable;
-use Khill\Lavacharts\Support\Traits\RenderableTrait as IsRenderable;
-use Khill\Lavacharts\Support\Contracts\JsonableInterface as Jsonable;
-use Khill\Lavacharts\Support\Contracts\WrappableInterface as Wrappable;
-use Khill\Lavacharts\Support\Contracts\RenderableInterface as Renderable;
-use Khill\Lavacharts\Support\Contracts\VisualizationInterface as Visualization;
+use Hypoid\Lavacharts\Support\Customizable;
+use Hypoid\Lavacharts\DataTables\DataTable;
+use Hypoid\Lavacharts\Values\ElementId;
+use Hypoid\Lavacharts\Values\Label;
+use Hypoid\Lavacharts\Support\Traits\ElementIdTrait as HasElementId;
+use Hypoid\Lavacharts\Support\Traits\DataTableTrait as HasDataTable;
+use Hypoid\Lavacharts\Support\Traits\RenderableTrait as IsRenderable;
+use Hypoid\Lavacharts\Support\Contracts\JsonableInterface as Jsonable;
+use Hypoid\Lavacharts\Support\Contracts\WrappableInterface as Wrappable;
+use Hypoid\Lavacharts\Support\Contracts\RenderableInterface as Renderable;
+use Hypoid\Lavacharts\Support\Contracts\VisualizationInterface as Visualization;
 
 /**
  * Class Chart
@@ -21,7 +21,7 @@ use Khill\Lavacharts\Support\Contracts\VisualizationInterface as Visualization;
  * used between all the different charts.
  *
  *
- * @package   Khill\Lavacharts\Charts
+ * @package   Hypoid\Lavacharts\Charts
  * @author    Kevin Hill <kevinkhill@gmail.com>
  * @copyright (c) 2017, KHill Designs
  * @link      http://github.com/kevinkhill/lavacharts GitHub Repository Page
@@ -40,8 +40,8 @@ class Chart extends Customizable implements Renderable, Wrappable, Jsonable, Vis
     /**
      * Builds a new chart with the given label.
      *
-     * @param \Khill\Lavacharts\Values\Label         $chartLabel Identifying label for the chart.
-     * @param \Khill\Lavacharts\DataTables\DataTable $datatable DataTable used for the chart.
+     * @param \Hypoid\Lavacharts\Values\Label         $chartLabel Identifying label for the chart.
+     * @param \Hypoid\Lavacharts\DataTables\DataTable $datatable DataTable used for the chart.
      * @param array                                  $options Options fot the chart.
      */
     public function __construct(Label $chartLabel, DataTable $datatable = null, array $options = [])
@@ -186,7 +186,7 @@ class Chart extends Customizable implements Renderable, Wrappable, Jsonable, Vis
      *
      * @since  3.0.0
      * @param  array $options Array of customization options for the chart
-     * @return \Khill\Lavacharts\Charts\Chart
+     * @return \Hypoid\Lavacharts\Charts\Chart
      */
     public function customize(array $options)
     {

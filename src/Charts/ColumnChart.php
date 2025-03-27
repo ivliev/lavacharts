@@ -1,8 +1,8 @@
 <?php
 
-namespace Khill\Lavacharts\Charts;
+namespace Hypoid\Lavacharts\Charts;
 
-use \Khill\Lavacharts\Support\Traits\PngRenderableTrait as PngRenderable;
+use \Hypoid\Lavacharts\Support\Traits\PngRenderableTrait as PngRenderable;
 
 /**
  * ColumnChart Class
@@ -12,7 +12,7 @@ use \Khill\Lavacharts\Support\Traits\PngRenderableTrait as PngRenderable;
  * chart, see the Bar Chart.
  *
  *
- * @package   Khill\Lavacharts\Charts
+ * @package   Hypoid\Lavacharts\Charts
  * @since     1.0.0
  * @author    Kevin Hill <kevinkhill@gmail.com>
  * @copyright (c) 2017, KHill Designs

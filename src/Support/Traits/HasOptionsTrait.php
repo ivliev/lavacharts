@@ -1,8 +1,8 @@
 <?php
 
-namespace Khill\Lavacharts\Support\Traits;
+namespace Hypoid\Lavacharts\Support\Traits;
 
-use Khill\Lavacharts\Support\Options;
+use Hypoid\Lavacharts\Support\Options;
 
 /**
  * Trait HasOptionsTrait
@@ -11,7 +11,7 @@ use Khill\Lavacharts\Support\Options;
  * an Options object.
  *
  *
- * @package   Khill\Lavacharts\Support\Traits
+ * @package   Hypoid\Lavacharts\Support\Traits
  * @since     3.2.0
  * @author    Kevin Hill <kevinkhill@gmail.com>
  * @copyright (c) 2017, KHill Designs

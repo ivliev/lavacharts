@@ -1,11 +1,11 @@
 <?php
 
-namespace Khill\Lavacharts\Dashboards\Filters;
+namespace Hypoid\Lavacharts\Dashboards\Filters;
 
 /**
  * Class StringFilter
  *
- * @package   Khill\Lavacharts\Dashboards\Filters
+ * @package   Hypoid\Lavacharts\Dashboards\Filters
  * @since     3.0.0
  * @author    Kevin Hill <kevinkhill@gmail.com>
  * @copyright (c) 2017, KHill Designs

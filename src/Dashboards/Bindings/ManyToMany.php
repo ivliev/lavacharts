@@ -1,13 +1,13 @@
 <?php
 
-namespace Khill\Lavacharts\Dashboards\Bindings;
+namespace Hypoid\Lavacharts\Dashboards\Bindings;
 
 /**
  * ManyToMany Binding Class
  *
  * Binds multiple ControlWrappers to a multiple ChartWrapper for use in dashboards.
  *
- * @package   Khill\Lavacharts\Dashboards\Bindings
+ * @package   Hypoid\Lavacharts\Dashboards\Bindings
  * @since     3.0.0
  * @author    Kevin Hill <kevinkhill@gmail.com>
  * @copyright (c) 2017, KHill Designs

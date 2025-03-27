@@ -1,13 +1,13 @@
 <?php
 
-namespace Khill\Lavacharts\Support;
+namespace Hypoid\Lavacharts\Support;
 
 /**
  * Config Class
  *
  * Simple class to manage the default configuration of Lavacharts
  *
- * @package   Khill\Lavacharts
+ * @package   Hypoid\Lavacharts
  * @since     3.2.0
  * @author    Kevin Hill <kevinkhill@gmail.com>
  * @copyright (c) 2017, KHill Designs

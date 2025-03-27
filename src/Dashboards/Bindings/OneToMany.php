@@ -1,15 +1,15 @@
 <?php
 
-namespace Khill\Lavacharts\Dashboards\Bindings;
+namespace Hypoid\Lavacharts\Dashboards\Bindings;
 
-use Khill\Lavacharts\Dashboards\Wrappers\ControlWrapper;
+use Hypoid\Lavacharts\Dashboards\Wrappers\ControlWrapper;
 
 /**
  * OneToMany Binding Class
  *
  * Binds a single ControlWrapper to multiple ChartWrappers for use in dashboards.
  *
- * @package   Khill\Lavacharts\Dashboards\Bindings
+ * @package   Hypoid\Lavacharts\Dashboards\Bindings
  * @since     3.0.0
  * @author    Kevin Hill <kevinkhill@gmail.com>
  * @copyright (c) 2017, KHill Designs
@@ -29,7 +29,7 @@ class OneToMany extends Binding
     /**
      * Creates the new Binding.
      *
-     * @param \Khill\Lavacharts\Dashboards\Wrappers\ControlWrapper $controlWrapper
+     * @param \Hypoid\Lavacharts\Dashboards\Wrappers\ControlWrapper $controlWrapper
      * @param array                                                $chartWrappers
      */
     public function __construct(ControlWrapper $controlWrapper, array $chartWrappers)

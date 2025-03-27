@@ -1,8 +1,8 @@
 <?php
 
-namespace Khill\Lavacharts\Exceptions;
+namespace Hypoid\Lavacharts\Exceptions;
 
-use Khill\Lavacharts\Charts\Chart;
+use Hypoid\Lavacharts\Charts\Chart;
 
 class DataTableNotFound extends LavaException
 {

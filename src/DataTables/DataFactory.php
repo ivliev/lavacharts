@@ -1,9 +1,9 @@
 <?php
 
-namespace Khill\Lavacharts\DataTables;
+namespace Hypoid\Lavacharts\DataTables;
 
-use Khill\Lavacharts\DataTables\Cells\Cell;
-use Khill\Lavacharts\Exceptions\InvalidJson;
+use Hypoid\Lavacharts\DataTables\Cells\Cell;
+use Hypoid\Lavacharts\Exceptions\InvalidJson;
 
 /**
  * Class DataFactory
@@ -12,7 +12,7 @@ use Khill\Lavacharts\Exceptions\InvalidJson;
  * ways.
  *
  *
- * @package   Khill\Lavacharts\DataTables
+ * @package   Hypoid\Lavacharts\DataTables
  * @since     3.1.0
  * @author    Kevin Hill <kevinkhill@gmail.com>
  * @copyright (c) 2017, KHill Designs
@@ -37,7 +37,7 @@ class DataFactory
      * @param  mixed  $columns  Array of columns or timezone
      * @param  array  $rows     Array of rows
      * @param  string $timezone Timezone to use while using Carbon
-     * @return \Khill\Lavacharts\DataTables\DataTable
+     * @return \Hypoid\Lavacharts\DataTables\DataTable
      */
     public static function DataTable($columns = null, array $rows = [], $timezone = null)
     {
@@ -66,14 +66,14 @@ class DataFactory
      * This method will create an empty DataTable, with or without a timezone.
      *
      * @param  string $timezone Timezone to use while using Carbon
-     * @return \Khill\Lavacharts\DataTables\DataTable
+     * @return \Hypoid\Lavacharts\DataTables\DataTable
      */
     private static function emptyDataTable($timezone)
     {
-        $datatable = '\Khill\Lavacharts\DataTablePlus\DataTablePlus';
+        $datatable = '\Hypoid\Lavacharts\DataTablePlus\DataTablePlus';
 
         if (class_exists($datatable) === false) {
-            $datatable = '\Khill\Lavacharts\DataTables\DataTable';
+            $datatable = '\Hypoid\Lavacharts\DataTables\DataTable';
         }
 
         return new $datatable($timezone);
@@ -90,7 +90,7 @@ class DataFactory
      *
      * @param  array $tableArray Array of arrays containing column labels and data.
      * @param  bool  $firstRowIsData If true, the first row is treated as data, not column labels.
-     * @return \Khill\Lavacharts\DataTables\DataTable
+     * @return \Hypoid\Lavacharts\DataTables\DataTable
      */
     public static function arrayToDataTable($tableArray, $firstRowIsData = false)
     {
@@ -145,8 +145,8 @@ class DataFactory
      *  - {"label": "Team"} would be accepted.
      *
      * @param  string $jsonString JSON string to decode
-     * @return \Khill\Lavacharts\DataTables\DataTable
-     * @throws \Khill\Lavacharts\Exceptions\InvalidJson
+     * @return \Hypoid\Lavacharts\DataTables\DataTable
+     * @throws \Hypoid\Lavacharts\Exceptions\InvalidJson
      */
     public static function createFromJson($jsonString)
     {
@@ -203,7 +203,7 @@ class DataFactory
      * @param  mixed  $v Value of the Cell
      * @param  string $f Formatted version of the cell, as a string
      * @param  array  $p Cell specific customization options
-     * @return \Khill\Lavacharts\DataTables\Cells\Cell
+     * @return \Hypoid\Lavacharts\DataTables\Cells\Cell
      */
     public static function cell($v, $f = '', $p = [])
     {

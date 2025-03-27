@@ -1,6 +1,6 @@
 <?php
 
-namespace Khill\Lavacharts\Charts;
+namespace Hypoid\Lavacharts\Charts;
 
 /**
  * CalendarChart Class
@@ -10,7 +10,7 @@ namespace Khill\Lavacharts\Charts;
  * depending on the day of the week, or how it trends over time.
  *
  *
- * @package   Khill\Lavacharts\Charts
+ * @package   Hypoid\Lavacharts\Charts
  * @since     2.1.0
  * @author    Kevin Hill <kevinkhill@gmail.com>
  * @copyright (c) 2017, KHill Designs

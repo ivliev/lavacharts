@@ -1,6 +1,6 @@
 <?php
 
-namespace Khill\Lavacharts\Symfony\Bundle;
+namespace Hypoid\Lavacharts\Symfony\Bundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

@@ -1,13 +1,13 @@
 <?php
 
-namespace Khill\Lavacharts\Dashboards\Filters;
+namespace Hypoid\Lavacharts\Dashboards\Filters;
 
 /**
  * Category Filter Class
  *
  * A picker to choose one or more between a set of defined values.
  *
- * @package   Khill\Lavacharts\Dashboards\Filters
+ * @package   Hypoid\Lavacharts\Dashboards\Filters
  * @since     3.0.0
  * @author    Kevin Hill <kevinkhill@gmail.com>
  * @copyright (c) 2017, KHill Designs

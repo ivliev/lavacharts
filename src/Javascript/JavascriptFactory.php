@@ -1,8 +1,8 @@
 <?php
 
-namespace Khill\Lavacharts\Javascript;
+namespace Hypoid\Lavacharts\Javascript;
 
-use Khill\Lavacharts\Support\Buffer;
+use Hypoid\Lavacharts\Support\Buffer;
 
 /**
  * JavascriptFactory Class
@@ -11,7 +11,7 @@ use Khill\Lavacharts\Support\Buffer;
  * javascript blocks for outputting into the page.
  *
  * @category   Class
- * @package    Khill\Lavacharts\Javascript
+ * @package    Hypoid\Lavacharts\Javascript
  * @since      2.0.0
  * @author     Kevin Hill <kevinkhill@gmail.com>
  * @copyright  (c) 2017, KHill Designs
@@ -24,7 +24,7 @@ class JavascriptFactory
     /**
      * Javascript output buffer.
      *
-     * @var \Khill\Lavacharts\Support\Buffer
+     * @var \Hypoid\Lavacharts\Support\Buffer
      */
     protected $buffer;
 
@@ -70,7 +70,7 @@ class JavascriptFactory
     /**
      * Returns the output buffer for the javascript.
      *
-     * @return \Khill\Lavacharts\Support\Buffer
+     * @return \Hypoid\Lavacharts\Support\Buffer
      */
     public function getOutputBuffer()
     {

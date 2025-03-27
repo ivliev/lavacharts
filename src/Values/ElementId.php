@@ -1,8 +1,8 @@
 <?php
 
-namespace Khill\Lavacharts\Values;
+namespace Hypoid\Lavacharts\Values;
 
-use Khill\Lavacharts\Exceptions\InvalidElementId;
+use Hypoid\Lavacharts\Exceptions\InvalidElementId;
 
 /**
  * ElementId Value Object
@@ -11,7 +11,7 @@ use Khill\Lavacharts\Exceptions\InvalidElementId;
  * Creates a new ElementId Object defining an id on an html entity
  * while checking if it is a non empty string.
  *
- * @package   Khill\Lavacharts\Values
+ * @package   Hypoid\Lavacharts\Values
  * @since     3.0.0
  * @author    Kevin Hill <kevinkhill@gmail.com>
  * @copyright (c) 2017, KHill Designs

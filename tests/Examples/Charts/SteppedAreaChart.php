@@ -1,5 +1,5 @@
 <?php
-    use Khill\Lavacharts\DataTables\DataFactory;
+    use Hypoid\Lavacharts\DataTables\DataFactory;
 
     $data = DataFactory::DataTable([
         ['string', 'Director (Year)'],

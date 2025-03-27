@@ -1,6 +1,6 @@
 <?php
 
-namespace Khill\Lavacharts\Exceptions;
+namespace Hypoid\Lavacharts\Exceptions;
 
 class InvalidChartWrapperParams extends LavaException
 {

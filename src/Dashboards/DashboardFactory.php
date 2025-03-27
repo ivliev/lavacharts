@@ -1,8 +1,8 @@
 <?php
 
-namespace Khill\Lavacharts\Dashboards;
+namespace Hypoid\Lavacharts\Dashboards;
 
-use \Khill\Lavacharts\Builders\DashboardBuilder;
+use \Hypoid\Lavacharts\Builders\DashboardBuilder;
 
 /**
  * DashboardFactory Class
@@ -12,7 +12,7 @@ use \Khill\Lavacharts\Builders\DashboardBuilder;
  *
  *
  * @category  Class
- * @package   Khill\Lavacharts\Dashboards
+ * @package   Hypoid\Lavacharts\Dashboards
  * @since     3.1.0
  * @author    Kevin Hill <kevinkhill@gmail.com>
  * @copyright (c) 2017, KHill Designs
@@ -25,7 +25,7 @@ class DashboardFactory
     /**
      * Instance of the DashboardBuilder
      *
-     * @var \Khill\Lavacharts\Builders\DashboardBuilder
+     * @var \Hypoid\Lavacharts\Builders\DashboardBuilder
      */
     private $dashBuilder;
 
@@ -45,7 +45,7 @@ class DashboardFactory
      *
      * @since  3.1.0
      * @param  array $args Array of arguments from Lavacharts
-     * @return \Khill\Lavacharts\Dashboards\Dashboard
+     * @return \Hypoid\Lavacharts\Dashboards\Dashboard
      */
     public function create($args)
     {

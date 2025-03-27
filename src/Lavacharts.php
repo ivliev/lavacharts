@@ -1,29 +1,29 @@
 <?php
 
-namespace Khill\Lavacharts;
+namespace Hypoid\Lavacharts;
 
-use Khill\Lavacharts\Charts\Chart;
-use Khill\Lavacharts\Charts\ChartFactory;
-use Khill\Lavacharts\Dashboards\Dashboard;
-use Khill\Lavacharts\Dashboards\DashboardFactory;
-use Khill\Lavacharts\Dashboards\Filters\Filter;
-use Khill\Lavacharts\Dashboards\Filters\FilterFactory;
-use Khill\Lavacharts\Dashboards\Wrappers\ChartWrapper;
-use Khill\Lavacharts\Dashboards\Wrappers\ControlWrapper;
-use Khill\Lavacharts\DataTables\DataTable;
-use Khill\Lavacharts\DataTables\Formats\Format;
-use Khill\Lavacharts\Exceptions\InvalidElementId;
-use Khill\Lavacharts\Exceptions\InvalidLabel;
-use Khill\Lavacharts\Exceptions\InvalidLavaObject;
-use Khill\Lavacharts\Javascript\ScriptManager;
-use Khill\Lavacharts\Support\Config;
-use Khill\Lavacharts\Support\Html\HtmlFactory;
-use Khill\Lavacharts\Support\Psr4Autoloader;
-use Khill\Lavacharts\Values\ElementId;
-use Khill\Lavacharts\Values\Label;
-use Khill\Lavacharts\Values\StringValue;
-use Khill\Lavacharts\Support\Traits\HasOptionsTrait as HasOptions;
-use Khill\Lavacharts\Support\Contracts\RenderableInterface as Renderable;
+use Hypoid\Lavacharts\Charts\Chart;
+use Hypoid\Lavacharts\Charts\ChartFactory;
+use Hypoid\Lavacharts\Dashboards\Dashboard;
+use Hypoid\Lavacharts\Dashboards\DashboardFactory;
+use Hypoid\Lavacharts\Dashboards\Filters\Filter;
+use Hypoid\Lavacharts\Dashboards\Filters\FilterFactory;
+use Hypoid\Lavacharts\Dashboards\Wrappers\ChartWrapper;
+use Hypoid\Lavacharts\Dashboards\Wrappers\ControlWrapper;
+use Hypoid\Lavacharts\DataTables\DataTable;
+use Hypoid\Lavacharts\DataTables\Formats\Format;
+use Hypoid\Lavacharts\Exceptions\InvalidElementId;
+use Hypoid\Lavacharts\Exceptions\InvalidLabel;
+use Hypoid\Lavacharts\Exceptions\InvalidLavaObject;
+use Hypoid\Lavacharts\Javascript\ScriptManager;
+use Hypoid\Lavacharts\Support\Config;
+use Hypoid\Lavacharts\Support\Html\HtmlFactory;
+use Hypoid\Lavacharts\Support\Psr4Autoloader;
+use Hypoid\Lavacharts\Values\ElementId;
+use Hypoid\Lavacharts\Values\Label;
+use Hypoid\Lavacharts\Values\StringValue;
+use Hypoid\Lavacharts\Support\Traits\HasOptionsTrait as HasOptions;
+use Hypoid\Lavacharts\Support\Contracts\RenderableInterface as Renderable;
 
 require(__DIR__.'/Support/Traits/HasOptionsTrait.php');
 
@@ -32,7 +32,7 @@ require(__DIR__.'/Support/Traits/HasOptionsTrait.php');
  *
  *
  * @category  Class
- * @package   Khill\Lavacharts
+ * @package   Hypoid\Lavacharts
  * @author    Kevin Hill <kevinkhill@gmail.com>
  * @copyright (c) 2017, KHill Designs
  * @link      http://github.com/kevinkhill/lavacharts GitHub Repository Page
@@ -46,7 +46,7 @@ class Lavacharts
     /**
      * Lavacharts version
      */
-    const VERSION = '3.1.11';
+    const VERSION = '3.5';
 
     /**
      * Locale for the Charts and Dashboards.
@@ -54,18 +54,22 @@ class Lavacharts
      * @var string
      */
     private $locale = 'en';
+    private $chartFactory;
+    private $dashFactory;
+ 
+
 
     /**
      * Holds all of the defined Charts and DataTables.
      *
-     * @var \Khill\Lavacharts\Volcano
+     * @var \Hypoid\Lavacharts\Volcano
      */
     private $volcano;
 
     /**
      * ScriptManager for outputting lava.js and chart/dashboard javascript
      *
-     * @var \Khill\Lavacharts\Javascript\ScriptManager
+     * @var \Hypoid\Lavacharts\Javascript\ScriptManager
      */
     private $scriptManager;
 
@@ -79,7 +83,7 @@ class Lavacharts
 
             $loader = new Psr4Autoloader;
             $loader->register();
-            $loader->addNamespace('Khill\Lavacharts', __DIR__);
+            $loader->addNamespace('Hypoid\Lavacharts', __DIR__);
         }
 
         $this->initializeOptions($options);
@@ -96,9 +100,9 @@ class Lavacharts
      * @since  1.0.0
      * @param  string $method Name of method
      * @param  array  $args   Passed arguments
-     * @throws \Khill\Lavacharts\Exceptions\InvalidLabel
-     * @throws \Khill\Lavacharts\Exceptions\InvalidLavaObject
-     * @throws \Khill\Lavacharts\Exceptions\InvalidFunctionParam
+     * @throws \Hypoid\Lavacharts\Exceptions\InvalidLabel
+     * @throws \Hypoid\Lavacharts\Exceptions\InvalidLavaObject
+     * @throws \Hypoid\Lavacharts\Exceptions\InvalidFunctionParam
      * @return mixed Returns Charts, Formats and Filters
      */
     public function __call($method, $args)
@@ -159,9 +163,9 @@ class Lavacharts
      * be created, otherwise a standard DataTable is returned.
      *
      * @since  3.0.3
-     * @uses   \Khill\Lavacharts\DataTables\DataFactory
+     * @uses   \Hypoid\Lavacharts\DataTables\DataFactory
      * @param  mixed $args
-     * @return \Khill\Lavacharts\DataTables\DataTable
+     * @return \Hypoid\Lavacharts\DataTables\DataTable
      */
     public function DataTable($args = null)
     {
@@ -175,11 +179,13 @@ class Lavacharts
      *
      * @since  3.0.0
      * @param  string                                 $label
-     * @param  \Khill\Lavacharts\DataTables\DataTable $dataTable
-     * @return \Khill\Lavacharts\Dashboards\Dashboard
+     * @param  \Hypoid\Lavacharts\DataTables\DataTable $dataTable
+     * @return \Hypoid\Lavacharts\Dashboards\Dashboard
      */
     public function Dashboard($label, DataTable $dataTable)
     {
+        $label = new Label($label);
+
         if ($this->exists('Dashboard', $label)) {
             $dashboard = $this->volcano->get('Dashboard', $label);
         } else {
@@ -195,10 +201,10 @@ class Lavacharts
      * Create a new ControlWrapper from a Filter
      *
      * @since  3.0.0
-     * @uses   \Khill\Lavacharts\Values\ElementId
-     * @param  \Khill\Lavacharts\Dashboards\Filters\Filter $filter Filter to wrap
+     * @uses   \Hypoid\Lavacharts\Values\ElementId
+     * @param  \Hypoid\Lavacharts\Dashboards\Filters\Filter $filter Filter to wrap
      * @param  string $elementId HTML element ID to output the control.
-     * @return \Khill\Lavacharts\Dashboards\Wrappers\ControlWrapper
+     * @return \Hypoid\Lavacharts\Dashboards\Wrappers\ControlWrapper
      */
     public function ControlWrapper(Filter $filter, $elementId)
     {
@@ -211,10 +217,10 @@ class Lavacharts
      * Create a new ChartWrapper from a Chart
      *
      * @since  3.0.0
-     * @uses   \Khill\Lavacharts\Values\ElementId
-     * @param  \Khill\Lavacharts\Charts\Chart $chart Chart to wrap
+     * @uses   \Hypoid\Lavacharts\Values\ElementId
+     * @param  \Hypoid\Lavacharts\Charts\Chart $chart Chart to wrap
      * @param  string $elementId HTML element ID to output the control.
-     * @return \Khill\Lavacharts\Dashboards\Wrappers\ChartWrapper
+     * @return \Hypoid\Lavacharts\Dashboards\Wrappers\ChartWrapper
      */
     public function ChartWrapper(Chart $chart, $elementId)
     {
@@ -234,7 +240,7 @@ class Lavacharts
      * @since  3.1.0
      * @param  string $locale
      * @return $this
-     * @throws \Khill\Lavacharts\Exceptions\InvalidStringValue
+     * @throws \Hypoid\Lavacharts\Exceptions\InvalidStringValue
      */
     public function setLocale($locale = 'en')
     {
@@ -286,7 +292,7 @@ class Lavacharts
      * Checks to see if the given chart or dashboard exists in the volcano storage.
      *
      * @since  2.4.2
-     * @uses   \Khill\Lavacharts\Values\Label
+     * @uses   \Hypoid\Lavacharts\Values\Label
      * @param  string $type Type of object to isNonEmpty.
      * @param  string $label Label of the object to isNonEmpty.
      * @return boolean
@@ -306,11 +312,11 @@ class Lavacharts
      * Fetches an existing Chart or Dashboard from the volcano storage.
      *
      * @since  3.0.0
-     * @uses   \Khill\Lavacharts\Values\Label
+     * @uses   \Hypoid\Lavacharts\Values\Label
      * @param  string $type  Type of Chart or Dashboard.
      * @param  string $label Label of the Chart or Dashboard.
-     * @return \Khill\Lavacharts\Support\Contracts\RenderableInterface
-     * @throws \Khill\Lavacharts\Exceptions\InvalidLavaObject
+     * @return \Hypoid\Lavacharts\Support\Contracts\RenderableInterface
+     * @throws \Hypoid\Lavacharts\Exceptions\InvalidLavaObject
      */
     public function fetch($type, $label)
     {
@@ -327,8 +333,8 @@ class Lavacharts
      * Stores a existing Chart or Dashboard into the volcano storage.
      *
      * @since  3.0.0
-     * @param  \Khill\Lavacharts\Support\Contracts\RenderableInterface $renderable A Chart or Dashboard.
-     * @return \Khill\Lavacharts\Support\Contracts\RenderableInterface
+     * @param  \Hypoid\Lavacharts\Support\Contracts\RenderableInterface $renderable A Chart or Dashboard.
+     * @return \Hypoid\Lavacharts\Support\Contracts\RenderableInterface
      */
     public function store(Renderable $renderable)
     {
@@ -345,9 +351,9 @@ class Lavacharts
      * if the elementId was set explicitly to the Renderable.
      *
      * @since  2.0.0
-     * @uses   \Khill\Lavacharts\Values\Label
-     * @uses   \Khill\Lavacharts\Values\ElementId
-     * @uses   \Khill\Lavacharts\Support\Buffer
+     * @uses   \Hypoid\Lavacharts\Values\Label
+     * @uses   \Hypoid\Lavacharts\Values\ElementId
+     * @uses   \Hypoid\Lavacharts\Support\Buffer
      * @param  string $type       Type of object to render.
      * @param  string $label      Label of the object to render.
      * @param  mixed  $elementId  HTML element id to render into.
@@ -408,17 +414,17 @@ class Lavacharts
      *
      * @since  3.0.0
      * @param  string                             $type
-     * @param  \Khill\Lavacharts\Values\Label     $label
-     * @param  \Khill\Lavacharts\Values\ElementId $elementId HTML element id to render the chart into.
+     * @param  \Hypoid\Lavacharts\Values\Label     $label
+     * @param  \Hypoid\Lavacharts\Values\ElementId $elementId HTML element id to render the chart into.
      * @param  bool|array                         $div       Set true for div creation, or pass an array with height & width
-     * @return \Khill\Lavacharts\Support\Buffer
-     * @throws \Khill\Lavacharts\Exceptions\ChartNotFound
-     * @throws \Khill\Lavacharts\Exceptions\InvalidConfigValue
-     * @throws \Khill\Lavacharts\Exceptions\InvalidDivDimensions
+     * @return \Hypoid\Lavacharts\Support\Buffer
+     * @throws \Hypoid\Lavacharts\Exceptions\ChartNotFound
+     * @throws \Hypoid\Lavacharts\Exceptions\InvalidConfigValue
+     * @throws \Hypoid\Lavacharts\Exceptions\InvalidDivDimensions
      */
-    private function renderChart($type, Label $label, ElementId $elementId = null, $div = false)
+    private function renderChart($type, Label $label, ?ElementId $elementId = null, $div = false)
     {
-        /** @var \Khill\Lavacharts\Charts\Chart $chart */
+        /** @var \Hypoid\Lavacharts\Charts\Chart $chart */
         $chart = $this->volcano->get($type, $label);
 
         if ($elementId === null) {
@@ -448,15 +454,15 @@ class Lavacharts
      * all of the necessary javascript to generate the chart.
      *
      * @since  3.0.0
-     * @uses   \Khill\Lavacharts\Support\Buffer   $buffer
-     * @param  \Khill\Lavacharts\Values\Label     $label
-     * @param  \Khill\Lavacharts\Values\ElementId $elementId HTML element id to render the chart into.
-     * @return \Khill\Lavacharts\Support\Buffer
-     * @throws \Khill\Lavacharts\Exceptions\DashboardNotFound
+     * @uses   \Hypoid\Lavacharts\Support\Buffer   $buffer
+     * @param  \Hypoid\Lavacharts\Values\Label     $label
+     * @param  \Hypoid\Lavacharts\Values\ElementId $elementId HTML element id to render the chart into.
+     * @return \Hypoid\Lavacharts\Support\Buffer
+     * @throws \Hypoid\Lavacharts\Exceptions\DashboardNotFound
      */
-    private function renderDashboard(Label $label, ElementId $elementId = null)
+    private function renderDashboard(Label $label, ?ElementId $elementId = null)
     {
-        /** @var \Khill\Lavacharts\Dashboards\Dashboard $dashboard */
+        /** @var \Hypoid\Lavacharts\Dashboards\Dashboard $dashboard */
         $dashboard = $this->volcano->get('Dashboard', $label);
 
         if ($elementId instanceof ElementId) {

@@ -1,16 +1,16 @@
 <?php
 
-namespace Khill\Lavacharts\Tests\DataTables;
+namespace Hypoid\Lavacharts\Tests\DataTables;
 
-use Khill\Lavacharts\DataTables\Columns\ColumnFactory;
-use Khill\Lavacharts\DataTables\DataTable;
-use Khill\Lavacharts\Tests\ProvidersTestCase;
+use Hypoid\Lavacharts\DataTables\Columns\ColumnFactory;
+use Hypoid\Lavacharts\DataTables\DataTable;
+use Hypoid\Lavacharts\Tests\ProvidersTestCase;
 use Carbon\Carbon;
 
 class DataTableTest extends ProvidersTestCase
 {
     /**
-     * @var \Khill\Lavacharts\DataTables\DataTable
+     * @var \Hypoid\Lavacharts\DataTables\DataTable
      */
     public $DataTable;
 
@@ -118,7 +118,7 @@ class DataTableTest extends ProvidersTestCase
     /**
      * @depends testSetTimezoneMethod
      * @dataProvider nonStringProvider
-     * @expectedException \Khill\Lavacharts\Exceptions\InvalidTimeZone
+     * @expectedException \Hypoid\Lavacharts\Exceptions\InvalidTimeZone
      */
     public function testSetTimezoneWithBadType($badTypes)
     {
@@ -127,7 +127,7 @@ class DataTableTest extends ProvidersTestCase
 
     /**
      * @depends testSetTimezoneMethod
-     * @expectedException \Khill\Lavacharts\Exceptions\InvalidTimeZone
+     * @expectedException \Hypoid\Lavacharts\Exceptions\InvalidTimeZone
      */
     public function testSetTimezoneWithInvalidTimezone($badTypes)
     {
@@ -157,7 +157,7 @@ class DataTableTest extends ProvidersTestCase
     /**
      * @depends testSetDateTimeFormat
      * @dataProvider nonStringProvider
-     * @expectedException \Khill\Lavacharts\Exceptions\InvalidDateTimeFormat
+     * @expectedException \Hypoid\Lavacharts\Exceptions\InvalidDateTimeFormat
      */
     public function testSetDateTimeFormatWithBadTypes($badTypes)
     {
@@ -200,7 +200,7 @@ class DataTableTest extends ProvidersTestCase
     }
 
     /**
-     * @expectedException \Khill\Lavacharts\Exceptions\InvalidConfigValue
+     * @expectedException \Hypoid\Lavacharts\Exceptions\InvalidConfigValue
      */
     public function testAddColumnWithBadTypes()
     {
@@ -212,12 +212,12 @@ class DataTableTest extends ProvidersTestCase
 
     /**
      * @dataProvider columnCreationNameProvider
-     * @covers \Khill\Lavacharts\DataTables\DataTable::addBooleanColumn
-     * @covers \Khill\Lavacharts\DataTables\DataTable::addStringColumn
-     * @covers \Khill\Lavacharts\DataTables\DataTable::addNumberColumn
-     * @covers \Khill\Lavacharts\DataTables\DataTable::addDateColumn
-     * @covers \Khill\Lavacharts\DataTables\DataTable::addDateTimeColumn
-     * @covers \Khill\Lavacharts\DataTables\DataTable::addTimeOfDayColumn
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::addBooleanColumn
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::addStringColumn
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::addNumberColumn
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::addDateColumn
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::addDateTimeColumn
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::addTimeOfDayColumn
      */
     public function testAddColumnViaNamedAlias($columnType)
     {
@@ -231,8 +231,8 @@ class DataTableTest extends ProvidersTestCase
     }
 
     /**
-     * @expectedException \Khill\Lavacharts\Exceptions\InvalidColumnDefinition
-     * @covers \Khill\Lavacharts\DataTables\DataTable::addColumns
+     * @expectedException \Hypoid\Lavacharts\Exceptions\InvalidColumnDefinition
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::addColumns
      */
     public function testAddColumnsWithBadTypesInArray()
     {
@@ -244,8 +244,8 @@ class DataTableTest extends ProvidersTestCase
     }
 
     /**
-     * @expectedException \Khill\Lavacharts\Exceptions\InvalidColumnType
-     * @covers \Khill\Lavacharts\DataTables\DataTable::addColumns
+     * @expectedException \Hypoid\Lavacharts\Exceptions\InvalidColumnType
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::addColumns
      */
     public function testAddColumnsWithBadValuesInArray()
     {
@@ -256,7 +256,7 @@ class DataTableTest extends ProvidersTestCase
     }
 
     /**
-     * @covers \Khill\Lavacharts\DataTables\DataTable::addRoleColumn
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::addRoleColumn
      */
     public function testAddRoleColumn()
     {
@@ -271,8 +271,8 @@ class DataTableTest extends ProvidersTestCase
     /**
      * @dataProvider nonStringProvider
      * @depends testAddRoleColumn
-     * @covers \Khill\Lavacharts\DataTables\DataTable::addRoleColumn
-     * @expectedException \Khill\Lavacharts\Exceptions\InvalidColumnType
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::addRoleColumn
+     * @expectedException \Hypoid\Lavacharts\Exceptions\InvalidColumnType
      */
     public function testAddRoleColumnWithBadColumnTypes($badTypes)
     {
@@ -282,8 +282,8 @@ class DataTableTest extends ProvidersTestCase
     /**
      * @dataProvider nonStringProvider
      * depends testAddRoleColumn
-     * @covers \Khill\Lavacharts\DataTables\DataTable::addRoleColumn
-     * @expectedException \Khill\Lavacharts\Exceptions\InvalidColumnRole
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::addRoleColumn
+     * @expectedException \Hypoid\Lavacharts\Exceptions\InvalidColumnRole
      */
     public function testAddRoleColumnWithBadRoleTypes($badTypes)
     {
@@ -292,8 +292,8 @@ class DataTableTest extends ProvidersTestCase
 
     /**
      * @depends testAddRoleColumn
-     * @covers \Khill\Lavacharts\DataTables\DataTable::addRoleColumn
-     * @expectedException \Khill\Lavacharts\Exceptions\InvalidColumnRole
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::addRoleColumn
+     * @expectedException \Hypoid\Lavacharts\Exceptions\InvalidColumnRole
      */
     public function testAddRoleColumnWithBadRoleValue()
     {
@@ -328,7 +328,7 @@ class DataTableTest extends ProvidersTestCase
     /**
      * @depends testAddColumnViaNamedAlias
      * @dataProvider nonIntProvider
-     * @expectedException \Khill\Lavacharts\Exceptions\InvalidColumnIndex
+     * @expectedException \Hypoid\Lavacharts\Exceptions\InvalidColumnIndex
      */
     public function testDropColumnWithBadType($badTypes)
     {
@@ -339,8 +339,8 @@ class DataTableTest extends ProvidersTestCase
 
     /**
      * @depends testAddColumnViaNamedAlias
-     * @expectedException \Khill\Lavacharts\Exceptions\InvalidColumnIndex
-     * @covers \Khill\Lavacharts\DataTables\DataTable::dropColumn
+     * @expectedException \Hypoid\Lavacharts\Exceptions\InvalidColumnIndex
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::dropColumn
      */
     public function testDropColumnWithNonExistentIndex()
     {
@@ -354,7 +354,7 @@ class DataTableTest extends ProvidersTestCase
     /**
      * @depends testAddColumnByType
      * @dataProvider columnTypeAndLabelProvider
-     * @covers \Khill\Lavacharts\DataTables\DataTable::addColumn
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::addColumn
      */
     public function testAddColumnWithTypeAndLabel($columnType, $columnLabel)
     {
@@ -367,7 +367,7 @@ class DataTableTest extends ProvidersTestCase
     }
 
     /**
-     * @covers \Khill\Lavacharts\DataTables\DataTable::addColumn
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::addColumn
      */
     public function testAddColumnWithArrayOfTypeAndLabel()
     {
@@ -380,7 +380,7 @@ class DataTableTest extends ProvidersTestCase
     }
 
     /**
-     * @covers \Khill\Lavacharts\DataTables\DataTable::addColumns
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::addColumns
      */
     public function testAddColumnsWithArrayOfTypeAndLabel()
     {
@@ -404,7 +404,7 @@ class DataTableTest extends ProvidersTestCase
 
     /**
      * @depends testAddColumnViaNamedAlias
-     * @covers \Khill\Lavacharts\DataTables\DataTable::addRow
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::addRow
      */
     public function testAddRowWithEmptyArrayForNull()
     {
@@ -418,7 +418,7 @@ class DataTableTest extends ProvidersTestCase
 
     /**
      * @depends testAddColumnViaNamedAlias
-     * @covers \Khill\Lavacharts\DataTables\DataTable::addRow
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::addRow
      */
     public function testAddRowWithNull()
     {
@@ -432,7 +432,7 @@ class DataTableTest extends ProvidersTestCase
 
     /**
      * depends testAddColumnViaNamedAlias
-     * @covers \Khill\Lavacharts\DataTables\DataTable::addRow
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::addRow
      */
     public function testAddRowWithDate()
     {
@@ -443,13 +443,13 @@ class DataTableTest extends ProvidersTestCase
         $cell   = $this->privateCellAccess(0, 0);
 
         $this->assertEquals('date', $column->getType());
-        $this->assertInstanceOf('\Khill\Lavacharts\Datatables\Cells\DateCell', $cell);
+        $this->assertInstanceOf('\Hypoid\Lavacharts\Datatables\Cells\DateCell', $cell);
         $this->assertEquals('Date(1988,2,24,0,0,0)', (string) $cell);
     }
 
     /**
      * @depends testAddColumnViaNamedAlias
-     * @covers \Khill\Lavacharts\DataTables\DataTable::addRow
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::addRow
      */
     public function testAddRowWithMultipleColumnsWithDateAndNumbers()
     {
@@ -473,7 +473,7 @@ class DataTableTest extends ProvidersTestCase
 
     /**
      * @depends testAddColumnViaNamedAlias
-     * @covers \Khill\Lavacharts\DataTables\DataTable::addRows
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::addRows
      */
     public function testAddRowsWithMultipleColumnsWithDateAndNumbers()
     {
@@ -506,8 +506,8 @@ class DataTableTest extends ProvidersTestCase
 
     /**
      * @depends testAddColumnViaNamedAlias
-     * @expectedException \Khill\Lavacharts\Exceptions\InvalidCellCount
-     * @covers \Khill\Lavacharts\DataTables\DataTable::addRow
+     * @expectedException \Hypoid\Lavacharts\Exceptions\InvalidCellCount
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::addRow
      */
     public function testAddRowWithMoreCellsThanColumns()
     {
@@ -521,7 +521,7 @@ class DataTableTest extends ProvidersTestCase
      * @depends testAddColumnViaNamedAlias
      * @dataProvider nonCarbonOrDateStringProvider
      * @expectedException \Exception
-     * @covers \Khill\Lavacharts\DataTables\DataTable::addRow
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::addRow
      */
     public function testAddRowWithBadDateTypes($badDate)
     {
@@ -532,7 +532,7 @@ class DataTableTest extends ProvidersTestCase
 
     /**
      * @depends testAddColumnViaNamedAlias
-     * @covers \Khill\Lavacharts\DataTables\DataTable::addRow
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::addRow
      */
     public function testAddRowWithEmptyArray()
     {
@@ -543,7 +543,7 @@ class DataTableTest extends ProvidersTestCase
 
     /**
      * @depends testAddRowsWithMultipleColumnsWithDateAndNumbers
-     * @covers \Khill\Lavacharts\DataTables\DataTable::getRows
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::getRows
      */
     public function testGetRows()
     {
@@ -566,7 +566,7 @@ class DataTableTest extends ProvidersTestCase
 
     /**
      * @depends testGetRows
-     * @covers \Khill\Lavacharts\DataTables\DataTable::getRowCount
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::getRowCount
      */
     public function testGetRowCount()
     {
@@ -586,7 +586,7 @@ class DataTableTest extends ProvidersTestCase
 
     /**
      * @depends testAddColumnViaNamedAlias
-     * @covers \Khill\Lavacharts\DataTables\DataTable::formatColumn
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::formatColumn
      */
     public function testFormatColumn()
     {
@@ -607,8 +607,8 @@ class DataTableTest extends ProvidersTestCase
     /**
      * @depends testAddColumnViaNamedAlias
      * @depends testFormatColumn
-     * @expectedException \Khill\Lavacharts\Exceptions\InvalidColumnIndex
-     * @covers \Khill\Lavacharts\DataTables\DataTable::formatColumn
+     * @expectedException \Hypoid\Lavacharts\Exceptions\InvalidColumnIndex
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::formatColumn
      */
     public function testFormatColumnWithBadIndex()
     {
@@ -622,7 +622,7 @@ class DataTableTest extends ProvidersTestCase
     /**
      * @depends testAddColumnViaNamedAlias
      * @depends testFormatColumn
-     * @covers \Khill\Lavacharts\DataTables\DataTable::formatColumns
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::formatColumns
      */
     public function testFormatColumns()
     {
@@ -654,7 +654,7 @@ class DataTableTest extends ProvidersTestCase
     /**
      * @depends testAddColumnViaNamedAlias
      * @depends testFormatColumns
-     * @covers \Khill\Lavacharts\DataTables\DataTable::getFormattedColumns
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::getFormattedColumns
      */
     public function testGetFormattedColumns()
     {
@@ -687,7 +687,7 @@ class DataTableTest extends ProvidersTestCase
     /**
      * @depends testAddColumnViaNamedAlias
      * @depends testGetFormattedColumns
-     * @covers \Khill\Lavacharts\DataTables\DataTable::hasFormattedColumns
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::hasFormattedColumns
      */
     public function testHasFormattedColumns()
     {
@@ -710,7 +710,7 @@ class DataTableTest extends ProvidersTestCase
     /**
      * @depends testAddColumnViaNamedAlias
      * @depends testGetFormattedColumns
-     * @covers \Khill\Lavacharts\DataTables\DataTable::hasFormattedColumns
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::hasFormattedColumns
      */
     public function testHasFormattedColumnsWithNoFormattedColumns()
     {
@@ -754,7 +754,7 @@ class DataTableTest extends ProvidersTestCase
 
     /**
      * @depends testAddColumnWithTypeAndLabel
-     * @covers \Khill\Lavacharts\DataTables\DataTable::getColumn
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::getColumn
      */
     public function testGetColumn()
     {
@@ -784,7 +784,7 @@ class DataTableTest extends ProvidersTestCase
 
     /**
      * @depends testAddColumnWithTypeAndLabel
-     * @covers \Khill\Lavacharts\DataTables\DataTable::getColumnLabel
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::getColumnLabel
      */
     public function testGetColumnLabel()
     {
@@ -796,7 +796,7 @@ class DataTableTest extends ProvidersTestCase
 
     /**
      * @depends testAddColumnWithTypeAndLabel
-     * @covers \Khill\Lavacharts\DataTables\DataTable::getColumnLabels
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::getColumnLabels
      */
     public function testGetColumnLabels()
     {
@@ -812,7 +812,7 @@ class DataTableTest extends ProvidersTestCase
 
     /**
      * @depends testAddColumnWithTypeAndLabel
-     * @covers \Khill\Lavacharts\DataTables\DataTable::getColumnType
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::getColumnType
      */
     public function testGetColumnType()
     {
@@ -835,7 +835,7 @@ class DataTableTest extends ProvidersTestCase
 
     /**
      * @depends testAddColumnViaNamedAlias
-     * @covers \Khill\Lavacharts\DataTables\DataTable::getColumnsByType
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::getColumnsByType
      */
     public function testGetColumnsByType()
     {
@@ -848,7 +848,7 @@ class DataTableTest extends ProvidersTestCase
 
     /**
      * @depends testAddColumnViaNamedAlias
-     * @covers \Khill\Lavacharts\DataTables\DataTable::getColumnsByType
+     * @covers \Hypoid\Lavacharts\DataTables\DataTable::getColumnsByType
      */
     public function testGetColumnsByTypeWithDuplicateTypes()
     {

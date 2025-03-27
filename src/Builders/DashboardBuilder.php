@@ -1,9 +1,9 @@
 <?php
 
-namespace Khill\Lavacharts\Builders;
+namespace Hypoid\Lavacharts\Builders;
 
-use \Khill\Lavacharts\Dashboards\Dashboard;
-use \Khill\Lavacharts\DataTables\DataTable;
+use \Hypoid\Lavacharts\Dashboards\Dashboard;
+use \Hypoid\Lavacharts\DataTables\DataTable;
 
 /**
  * Class DashboardBuilder
@@ -11,7 +11,7 @@ use \Khill\Lavacharts\DataTables\DataTable;
  * This class is used to build dashboards by setting the properties, instead of trying to cover
  * everything in the constructor.
  *
- * @package    Khill\Lavacharts\Builders
+ * @package    Hypoid\Lavacharts\Builders
  * @since      3.0.3
  * @author     Kevin Hill <kevinkhill@gmail.com>
  * @copyright  (c) 2017, KHill Designs
@@ -24,21 +24,21 @@ class DashboardBuilder extends GenericBuilder
     /**
      * Datatable for the chart.
      *
-     * @var \Khill\Lavacharts\DataTables\DataTable
+     * @var \Hypoid\Lavacharts\DataTables\DataTable
      */
     protected $datatable = null;
 
     /**
      * Bindings to use for the dashboard.
      *
-     * @var \Khill\Lavacharts\Dashboards\Bindings\Binding[]
+     * @var \Hypoid\Lavacharts\Dashboards\Bindings\Binding[]
      */
     protected $bindings = [];
 
     /**
      * Set the bindings for the Dashboard.
      *
-     * @param  \Khill\Lavacharts\Dashboards\Bindings\Binding[] $bindings Array of bindings
+     * @param  \Hypoid\Lavacharts\Dashboards\Bindings\Binding[] $bindings Array of bindings
      * @return $this
      */
     public function setBindings(array $bindings)
@@ -51,7 +51,7 @@ class DashboardBuilder extends GenericBuilder
     /**
      * Set the DataTable for the dashboard
      *
-     * @param \Khill\Lavacharts\DataTables\DataTable $datatable
+     * @param \Hypoid\Lavacharts\DataTables\DataTable $datatable
      * @return $this
      */
     public function setDataTable(DataTable $datatable)
@@ -64,7 +64,7 @@ class DashboardBuilder extends GenericBuilder
     /**
      * Returns the built Dashboard.
      *
-     * @return \Khill\Lavacharts\Dashboards\Dashboard
+     * @return \Hypoid\Lavacharts\Dashboards\Dashboard
      */
     public function getDashboard()
     {

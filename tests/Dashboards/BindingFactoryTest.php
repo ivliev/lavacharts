@@ -1,11 +1,11 @@
 <?php
 
-namespace Khill\Lavacharts\Tests\Dashboards;
+namespace Hypoid\Lavacharts\Tests\Dashboards;
 
-use Khill\Lavacharts\Dashboards\Bindings\BindingFactory;
+use Hypoid\Lavacharts\Dashboards\Bindings\BindingFactory;
 
 /**
- * @property \Khill\Lavacharts\Dashboards\Bindings\BindingFactory factory
+ * @property \Hypoid\Lavacharts\Dashboards\Bindings\BindingFactory factory
  */
 class BindingFactoryTest extends DashboardsTestCase
 {
@@ -17,19 +17,19 @@ class BindingFactoryTest extends DashboardsTestCase
     }
 
     /**
-     * @covers \Khill\Lavacharts\Dashboards\Bindings\OneToOne
-     * @covers \Khill\Lavacharts\Dashboards\Bindings\BindingFactory::create
+     * @covers \Hypoid\Lavacharts\Dashboards\Bindings\OneToOne
+     * @covers \Hypoid\Lavacharts\Dashboards\Bindings\BindingFactory::create
      */
     public function testBindWithOneToOne()
     {
         $binding = $this->factory->create($this->mockControlWrap, $this->mockChartWrap);
 
-        $this->assertInstanceOf('\Khill\Lavacharts\Dashboards\Bindings\OneToOne', $binding);
+        $this->assertInstanceOf('\Hypoid\Lavacharts\Dashboards\Bindings\OneToOne', $binding);
     }
 
     /**
-     * @covers \Khill\Lavacharts\Dashboards\Bindings\OneToMany
-     * @covers \Khill\Lavacharts\Dashboards\Bindings\BindingFactory::create
+     * @covers \Hypoid\Lavacharts\Dashboards\Bindings\OneToMany
+     * @covers \Hypoid\Lavacharts\Dashboards\Bindings\BindingFactory::create
      */
     public function testBindWithOneToMany()
     {
@@ -38,12 +38,12 @@ class BindingFactoryTest extends DashboardsTestCase
             [$this->mockChartWrap, $this->mockChartWrap]
         );
 
-        $this->assertInstanceOf('\Khill\Lavacharts\Dashboards\Bindings\OneToMany', $binding);
+        $this->assertInstanceOf('\Hypoid\Lavacharts\Dashboards\Bindings\OneToMany', $binding);
     }
 
     /**
-     * @covers \Khill\Lavacharts\Dashboards\Bindings\ManyToOne
-     * @covers \Khill\Lavacharts\Dashboards\Bindings\BindingFactory::create
+     * @covers \Hypoid\Lavacharts\Dashboards\Bindings\ManyToOne
+     * @covers \Hypoid\Lavacharts\Dashboards\Bindings\BindingFactory::create
      */
     public function testBindWithManyToOne()
     {
@@ -52,12 +52,12 @@ class BindingFactoryTest extends DashboardsTestCase
             $this->mockChartWrap
         );
 
-        $this->assertInstanceOf('\Khill\Lavacharts\Dashboards\Bindings\ManyToOne', $binding);
+        $this->assertInstanceOf('\Hypoid\Lavacharts\Dashboards\Bindings\ManyToOne', $binding);
     }
 
     /**
-     * @covers \Khill\Lavacharts\Dashboards\Bindings\ManyToMany
-     * @covers \Khill\Lavacharts\Dashboards\Bindings\BindingFactory::create
+     * @covers \Hypoid\Lavacharts\Dashboards\Bindings\ManyToMany
+     * @covers \Hypoid\Lavacharts\Dashboards\Bindings\BindingFactory::create
      */
     public function testBindWithManyToMany()
     {
@@ -66,6 +66,6 @@ class BindingFactoryTest extends DashboardsTestCase
             [$this->mockChartWrap, $this->mockChartWrap]
         );
 
-        $this->assertInstanceOf('\Khill\Lavacharts\Dashboards\Bindings\ManyToMany', $binding);
+        $this->assertInstanceOf('\Hypoid\Lavacharts\Dashboards\Bindings\ManyToMany', $binding);
     }
 }

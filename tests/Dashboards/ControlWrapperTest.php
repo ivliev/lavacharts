@@ -1,9 +1,9 @@
 <?php
 
-namespace Khill\Lavacharts\Tests\Dashboards;
+namespace Hypoid\Lavacharts\Tests\Dashboards;
 
-use Khill\Lavacharts\Tests\ProvidersTestCase;
-use Khill\Lavacharts\Dashboards\Wrappers\ControlWrapper;
+use Hypoid\Lavacharts\Tests\ProvidersTestCase;
+use Hypoid\Lavacharts\Dashboards\Wrappers\ControlWrapper;
 
 class ControlWrapperTest extends ProvidersTestCase
 {
@@ -21,7 +21,7 @@ class ControlWrapperTest extends ProvidersTestCase
 
     public function getMockFilter()
     {
-        return \Mockery::mock('\Khill\Lavacharts\Dashboards\Filters\NumberRangeFilter')
+        return \Mockery::mock('\Hypoid\Lavacharts\Dashboards\Filters\NumberRangeFilter')
             ->shouldReceive('getType')
             ->once()
             ->andReturn('NumberRangeFilter')
@@ -38,11 +38,11 @@ class ControlWrapperTest extends ProvidersTestCase
     }
 
     /**
-     * @covers \Khill\Lavacharts\Dashboards\Wrappers\Wrapper::getJsClass
+     * @covers \Hypoid\Lavacharts\Dashboards\Wrappers\Wrapper::getJsClass
      */
     public function testGetJsClass()
     {
-        $filter = \Mockery::mock('\Khill\Lavacharts\Dashboards\Filters\StringFilter');
+        $filter = \Mockery::mock('\Hypoid\Lavacharts\Dashboards\Filters\StringFilter');
 
         $controlWrapper = new ControlWrapper($filter, $this->mockElementId);
 

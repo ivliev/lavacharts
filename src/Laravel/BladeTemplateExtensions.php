@@ -1,9 +1,9 @@
 <?php
 
-namespace Khill\Lavacharts\Laravel;
+namespace Hypoid\Lavacharts\Laravel;
 
 use Illuminate\Support\Facades\App;
-use Khill\Lavacharts\Charts\ChartFactory;
+use Hypoid\Lavacharts\Charts\ChartFactory;
 
 /**
  * Blade Template Extensions
@@ -14,7 +14,7 @@ use Khill\Lavacharts\Charts\ChartFactory;
  * The above example would turn into @linechart('MyChart', 'div-id')
  *
  *
- * @package    Khill\Lavacharts\Laravel
+ * @package    Hypoid\Lavacharts\Laravel
  * @since      2.5.0
  * @author     Kevin Hill <kevinkhill@gmail.com>
  * @copyright  (c) 2015, KHill Designs

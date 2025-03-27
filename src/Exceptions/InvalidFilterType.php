@@ -1,8 +1,8 @@
 <?php
 
-namespace Khill\Lavacharts\Exceptions;
+namespace Hypoid\Lavacharts\Exceptions;
 
-use Khill\Lavacharts\Dashboards\Filters\FilterFactory;
+use Hypoid\Lavacharts\Dashboards\Filters\FilterFactory;
 
 class InvalidFilterType extends LavaException
 {

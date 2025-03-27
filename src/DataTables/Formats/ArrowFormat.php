@@ -1,6 +1,6 @@
 <?php
 
-namespace Khill\Lavacharts\DataTables\Formats;
+namespace Hypoid\Lavacharts\DataTables\Formats;
 
 /**
  * Class ArrowFormat
@@ -9,7 +9,7 @@ namespace Khill\Lavacharts\DataTables\Formats;
  * is above or below a specified base value. If equal to the base value, no arrow is shown.
  *
  *
- * @package    Khill\Lavacharts\DataTables\Formats
+ * @package    Hypoid\Lavacharts\DataTables\Formats
  * @since      3.0.0
  * @author     Kevin Hill <kevinkhill@gmail.com>
  * @copyright  (c) 2017, KHill Designs

@@ -1,6 +1,6 @@
 parameters:
-    khill.lavacharts.class: Khill\Lavacharts\Lavacharts
-    khill.lavacharts.twig: Khill\Lavacharts\Symfony\Bundle\Twig\LavachartsExtension
+    khill.lavacharts.class: Hypoid\Lavacharts\Lavacharts
+    khill.lavacharts.twig: Hypoid\Lavacharts\Symfony\Bundle\Twig\LavachartsExtension
 
 services:
     lavacharts:

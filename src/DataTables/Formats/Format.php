@@ -1,10 +1,10 @@
 <?php
 
-namespace Khill\Lavacharts\DataTables\Formats;
+namespace Hypoid\Lavacharts\DataTables\Formats;
 
-use Khill\Lavacharts\Support\Contracts\VisualizationInterface;
-use Khill\Lavacharts\Support\Customizable;
-use Khill\Lavacharts\Support\Contracts\JsonableInterface;
+use Hypoid\Lavacharts\Support\Contracts\VisualizationInterface;
+use Hypoid\Lavacharts\Support\Customizable;
+use Hypoid\Lavacharts\Support\Contracts\JsonableInterface;
 
 /**
  * Class Format
@@ -13,7 +13,7 @@ use Khill\Lavacharts\Support\Contracts\JsonableInterface;
  * functions to the child objects.
  *
  *
- * @package    Khill\Lavacharts\DataTables\Formats
+ * @package    Hypoid\Lavacharts\DataTables\Formats
  * @author     Kevin Hill <kevinkhill@gmail.com>
  * @since      3.0.0
  * @copyright  (c) 2017, KHill Designs
@@ -28,7 +28,7 @@ class Format extends Customizable implements JsonableInterface
      *
      * @param string $type
      * @param array  $options
-     * @return \Khill\Lavacharts\DataTables\Formats\Format
+     * @return \Hypoid\Lavacharts\DataTables\Formats\Format
      */
     public static function create($type, array $options = [])
     {

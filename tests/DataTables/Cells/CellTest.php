@@ -1,9 +1,9 @@
 <?php
 
-namespace Khill\Lavacharts\Tests\DataTables\Cells;
+namespace Hypoid\Lavacharts\Tests\DataTables\Cells;
 
-use Khill\Lavacharts\Tests\ProvidersTestCase;
-use Khill\Lavacharts\DataTables\Cells\Cell;
+use Hypoid\Lavacharts\Tests\ProvidersTestCase;
+use Hypoid\Lavacharts\DataTables\Cells\Cell;
 
 class CellTest extends ProvidersTestCase
 {
@@ -15,7 +15,7 @@ class CellTest extends ProvidersTestCase
     }
 
     /**
-     * @covers \Khill\Lavacharts\DataTables\Cells\Cell::__construct
+     * @covers \Hypoid\Lavacharts\DataTables\Cells\Cell::__construct
      */
     public function testConstructorArgs()
     {
@@ -29,8 +29,8 @@ class CellTest extends ProvidersTestCase
 
     /**
      * @dataProvider nonStringProvider
-     * @expectedException \Khill\Lavacharts\Exceptions\InvalidParamType
-     * @covers \Khill\Lavacharts\DataTables\Cells\Cell::__construct
+     * @expectedException \Hypoid\Lavacharts\Exceptions\InvalidParamType
+     * @covers \Hypoid\Lavacharts\DataTables\Cells\Cell::__construct
      */
     public function testConstructorArgFormatWithBadType($badTypes)
     {
@@ -39,7 +39,7 @@ class CellTest extends ProvidersTestCase
     
     /**
      * @depends testConstructorArgs
-     * @covers \Khill\Lavacharts\DataTables\Cells\Cell::getValue
+     * @covers \Hypoid\Lavacharts\DataTables\Cells\Cell::getValue
      */
     public function testGetValue()
     {
@@ -50,7 +50,7 @@ class CellTest extends ProvidersTestCase
 
     /**
      * @depends testConstructorArgs
-     * @covers \Khill\Lavacharts\DataTables\Cells\Cell::getFormat
+     * @covers \Hypoid\Lavacharts\DataTables\Cells\Cell::getFormat
      */
     public function testGetFormat()
     {
@@ -61,7 +61,7 @@ class CellTest extends ProvidersTestCase
 
     /**
      * @depends testConstructorArgs
-     * @covers \Khill\Lavacharts\DataTables\Cells\Cell::getOptions
+     * @covers \Hypoid\Lavacharts\DataTables\Cells\Cell::getOptions
      */
     public function testGetOptions()
     {
@@ -72,7 +72,7 @@ class CellTest extends ProvidersTestCase
 
     /**
      * @depends testConstructorArgs
-     * @covers \Khill\Lavacharts\DataTables\Cells\Cell::jsonSerialize
+     * @covers \Hypoid\Lavacharts\DataTables\Cells\Cell::jsonSerialize
      */
     public function testJsonSerialization()
     {

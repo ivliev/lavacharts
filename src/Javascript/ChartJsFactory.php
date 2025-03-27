@@ -1,8 +1,8 @@
 <?php
 
-namespace Khill\Lavacharts\Javascript;
+namespace Hypoid\Lavacharts\Javascript;
 
-use \Khill\Lavacharts\Charts\Chart;
+use \Hypoid\Lavacharts\Charts\Chart;
 
 /**
  * ChartFactory Class
@@ -11,7 +11,7 @@ use \Khill\Lavacharts\Charts\Chart;
  * javascript blocks for outputting into the page.
  *
  * @category   Class
- * @package    Khill\Lavacharts\Javascript
+ * @package    Hypoid\Lavacharts\Javascript
  * @since      3.0.0
  * @author     Kevin Hill <kevinkhill@gmail.com>
  * @copyright  (c) 2017, KHill Designs
@@ -31,7 +31,7 @@ class ChartJsFactory extends JavascriptFactory
     /**
      * Chart to create javascript from.
      *
-     * @var \Khill\Lavacharts\Charts\Chart
+     * @var \Hypoid\Lavacharts\Charts\Chart
      */
     protected $chart;
 
@@ -52,7 +52,7 @@ class ChartJsFactory extends JavascriptFactory
     /**
      * Creates a new ChartJsFactory with the javascript template.
      *
-     * @param  \Khill\Lavacharts\Charts\Chart $chart Chart to process
+     * @param  \Hypoid\Lavacharts\Charts\Chart $chart Chart to process
      */
     public function __construct(Chart $chart)
     {
@@ -157,7 +157,7 @@ class ChartJsFactory extends JavascriptFactory
 
         /**
          * @var int|string $index
-         * @var \Khill\Lavacharts\DataTables\Columns\Column $column
+         * @var \Hypoid\Lavacharts\DataTables\Columns\Column $column
          */
         foreach ($columns as $index => $column) {
             $format = $column->getFormat();

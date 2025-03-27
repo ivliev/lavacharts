@@ -1,16 +1,16 @@
 <?php
 
-namespace Khill\Lavacharts\DataTables\Cells;
+namespace Hypoid\Lavacharts\DataTables\Cells;
 
-use Khill\Lavacharts\Exceptions\InvalidParamType;
-use Khill\Lavacharts\Support\Customizable;
+use Hypoid\Lavacharts\Exceptions\InvalidParamType;
+use Hypoid\Lavacharts\Support\Customizable;
 
 /**
  * DataCell Object
  *
  * Holds the information for a data point
  *
- * @package   Khill\Lavacharts\DataTables\Cells
+ * @package   Hypoid\Lavacharts\DataTables\Cells
  * @since     3.0.0
  * @author    Kevin Hill <kevinkhill@gmail.com>
  * @copyright (c) 2017, KHill Designs
@@ -57,7 +57,7 @@ class Cell extends Customizable
      * @param  string       $v The cell value
      * @param  string       $f A string version of the v value
      * @param  array|string $p A map of custom values applied to the cell
-     * @throws \Khill\Lavacharts\Exceptions\InvalidParamType
+     * @throws \Hypoid\Lavacharts\Exceptions\InvalidParamType
      */
     public function __construct($v, $f = '', array $p = [])
     {
@@ -134,7 +134,7 @@ class Cell extends Customizable
      *
      * @return array
      */
-    public function jsonSerialize()
+    public function jsonSerialize():mixed
     {
         $json = ['v' => $this->v];
 

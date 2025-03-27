@@ -1,20 +1,20 @@
 <?php
 
-namespace Khill\Lavacharts\DataTables\Cells;
+namespace Hypoid\Lavacharts\DataTables\Cells;
 
 use Carbon\Carbon;
-use Khill\Lavacharts\Exceptions\CarbonParseError;
-use Khill\Lavacharts\Exceptions\InvalidDateTimeFormat;
-use Khill\Lavacharts\Exceptions\InvalidDateTimeString;
-use Khill\Lavacharts\Exceptions\InvalidStringValue;
-use Khill\Lavacharts\Values\StringValue;
+use Hypoid\Lavacharts\Exceptions\CarbonParseError;
+use Hypoid\Lavacharts\Exceptions\InvalidDateTimeFormat;
+use Hypoid\Lavacharts\Exceptions\InvalidDateTimeString;
+use Hypoid\Lavacharts\Exceptions\InvalidStringValue;
+use Hypoid\Lavacharts\Values\StringValue;
 
 /**
  * DateCell Class
  *
  * Wrapper object to implement JsonSerializable on the Carbon object.
  *
- * @package   Khill\Lavacharts\DataTables\Cells
+ * @package   Hypoid\Lavacharts\DataTables\Cells
  * @since     3.0.0
  * @author    Kevin Hill <kevinkhill@gmail.com>
  * @copyright (c) 2017, KHill Designs
@@ -31,7 +31,7 @@ class DateCell extends Cell
      * @param  string         $format
      * @param  array          $options
      */
-    public function __construct(Carbon $carbon = null, $format = '', array $options = [])
+    public function __construct(?Carbon $carbon = null, $format = '', array $options = [])
     {
         parent::__construct($carbon, $format, $options);
     }
@@ -44,9 +44,9 @@ class DateCell extends Cell
      *
      * @param  string $dateTimeString
      * @param  string $dateTimeFormat
-     * @return \Khill\Lavacharts\DataTables\Cells\Cell
-     * @throws \Khill\Lavacharts\Exceptions\InvalidDateTimeFormat
-     * @throws \Khill\Lavacharts\Exceptions\InvalidDateTimeString
+     * @return \Hypoid\Lavacharts\DataTables\Cells\Cell
+     * @throws \Hypoid\Lavacharts\Exceptions\InvalidDateTimeFormat
+     * @throws \Hypoid\Lavacharts\Exceptions\InvalidDateTimeString
      */
     public static function parseString($dateTimeString, $dateTimeFormat = '')
     {
@@ -82,8 +82,8 @@ class DateCell extends Cell
      *
      * @param  string $format
      * @param  string $datetime
-     * @return \Khill\Lavacharts\DataTables\Cells\DateCell
-     * @throws \Khill\Lavacharts\Exceptions\InvalidDateTimeFormat
+     * @return \Hypoid\Lavacharts\DataTables\Cells\DateCell
+     * @throws \Hypoid\Lavacharts\Exceptions\InvalidDateTimeFormat
      */
     public static function createFromFormat($format, $datetime)
     {
@@ -103,7 +103,7 @@ class DateCell extends Cell
      */
     public function __toString()
     {
-        if ($this->v === null) {
+        if (!is_object($this->v)) {
             return 'null';
         }
 
@@ -123,7 +123,7 @@ class DateCell extends Cell
      *
      * @return string
      */
-    public function jsonSerialize()
+    public function jsonSerialize():mixed
     {
         return ['v' => (string) $this];
     }

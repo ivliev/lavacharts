@@ -1,6 +1,6 @@
 <?php
 
-namespace Khill\Lavacharts\Support\Contracts;
+namespace Hypoid\Lavacharts\Support\Contracts;
 
 use JsonSerializable;
 
@@ -9,7 +9,7 @@ use JsonSerializable;
  *
  * Classes that implement this provide a method for custom JSON output.
  *
- * @package   Khill\Lavacharts\Support\Contracts
+ * @package   Hypoid\Lavacharts\Support\Contracts
  * @since     3.1.0
  * @author    Kevin Hill <kevinkhill@gmail.com>
  * @copyright (c) 2017, KHill Designs
@@ -29,7 +29,7 @@ interface Jsonable extends JsonSerializable
     /**
      * Custom serialization of the chart.
      *
-     * @return array
+     * @return mixed
      */
-    public function jsonSerialize();
+    public function jsonSerialize(): mixed;
 }

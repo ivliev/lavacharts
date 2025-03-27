@@ -1,7 +1,7 @@
 {
     "name": "hypoid/lavacharts",
     "description": "PHP wrapper library for the Google Chart API forker",
-    "version": "3.3",
+    "version": "3.5",
     "keywords": [
         "charts",
         "graphs",
@@ -15,7 +15,7 @@
         {
         "name": "Martial AUCLERC",
         "email": "martialus87@free.fr",
-        "role": "Mainteneur"
+        "role": "Mainteneur and updateur Laravel 12"
         },
         {
             "name": "Kevin Hill",
@@ -34,17 +34,16 @@
     },
     "require": {
         "php": ">=8.3",
-        "nesbot/carbon": ">=3.0 <6.0"
+        "nesbot/carbon": ">=3.0 <6.0",
+        "twig/twig": "^3.0"
     },
     "autoload": {
         "psr-4": {
-            "Khill\\Lavacharts\\": "src/"
+            "Hypoid\\Lavacharts\\": "src/"
         }
     },
     
-    "replace": {
-        "khill/lavacharts": "self.version"
-    },
+   
     
     "require-dev": {
         

@@ -1,15 +1,15 @@
 <?php
 
-namespace Khill\Lavacharts\Values;
+namespace Hypoid\Lavacharts\Values;
 
-use Khill\Lavacharts\Exceptions\InvalidStringValue;
+use Hypoid\Lavacharts\Exceptions\InvalidStringValue;
 
 /**
  * Class StringValue
  *
  * Creates a new String value object while checking if it is non empty and actually a string.
  *
- * @package   Khill\Lavacharts\Values
+ * @package   Hypoid\Lavacharts\Values
  * @since     3.0.0
  * @author    Kevin Hill <kevinkhill@gmail.com>
  * @copyright (c) 2017, KHill Designs
@@ -28,7 +28,7 @@ class StringValue implements \JsonSerializable
      * StringValue constructor.
      *
      * @param  string $value
-     * @throws \Khill\Lavacharts\Exceptions\InvalidStringValue
+     * @throws \Hypoid\Lavacharts\Exceptions\InvalidStringValue
      */
     public function __construct($value)
     {
@@ -68,7 +68,7 @@ class StringValue implements \JsonSerializable
     /**
      * @return string
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
         return $this->value;
     }

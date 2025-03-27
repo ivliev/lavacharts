@@ -1,6 +1,6 @@
 <?php
 
-namespace Khill\Lavacharts\Charts;
+namespace Hypoid\Lavacharts\Charts;
 
 /**
  * TreeMap Chart Class
@@ -21,7 +21,7 @@ namespace Khill\Lavacharts\Charts;
  * element that you insert in your page. If you have leaf nodes with names too
  * long to show, the name will be truncated with an ellipsis (...).
  *
- * @package   Khill\Lavacharts\Charts
+ * @package   Hypoid\Lavacharts\Charts
  * @since     3.1.0
  * @author    Kevin Hill <kevinkhill@gmail.com>
  * @copyright (c) 2017, KHill Designs

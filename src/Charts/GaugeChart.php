@@ -1,6 +1,6 @@
 <?php
 
-namespace Khill\Lavacharts\Charts;
+namespace Hypoid\Lavacharts\Charts;
 
 /**
  * GaugeChart Class
@@ -8,7 +8,7 @@ namespace Khill\Lavacharts\Charts;
  * A gauge with a dial, rendered within the browser using SVG or VML.
  *
  *
- * @package   Khill\Lavacharts\Charts
+ * @package   Hypoid\Lavacharts\Charts
  * @since     2.2.0
  * @author    Kevin Hill <kevinkhill@gmail.com>
  * @copyright (c) 2017, KHill Designs

@@ -33,7 +33,7 @@ class AppKernel extends Kernel
         $bundles = array(
             // ...
 
-            new Khill\Lavacharts\Symfony\Bundle\LavachartsBundle(),
+            new Hypoid\Lavacharts\Symfony\Bundle\LavachartsBundle(),
         );
 
         // ...

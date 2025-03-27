@@ -1,6 +1,6 @@
 <?php
 
-namespace Khill\Lavacharts\DataTables\Formats;
+namespace Hypoid\Lavacharts\DataTables\Formats;
 
 /**
  * Class DateFormat
@@ -9,7 +9,7 @@ namespace Khill\Lavacharts\DataTables\Formats;
  * Added to columns during column definition.
  *
  *
- * @package    Khill\Lavacharts\DataTables\Formats
+ * @package    Hypoid\Lavacharts\DataTables\Formats
  * @author     Kevin Hill <kevinkhill@gmail.com>
  * @copyright  (c) 2017, KHill Designs
  * @link       http://github.com/kevinkhill/lavacharts GitHub Repository Page

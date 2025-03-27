@@ -1,11 +1,11 @@
 <?php
 
-namespace Khill\Lavacharts\Dashboards\Filters;
+namespace Hypoid\Lavacharts\Dashboards\Filters;
 
-use Khill\Lavacharts\Exceptions\InvalidFilterType;
-use Khill\Lavacharts\Exceptions\InvalidParamType;
-use Khill\Lavacharts\Support\Customizable;
-use Khill\Lavacharts\Support\Contracts\WrappableInterface as Wrappable;
+use Hypoid\Lavacharts\Exceptions\InvalidFilterType;
+use Hypoid\Lavacharts\Exceptions\InvalidParamType;
+use Hypoid\Lavacharts\Support\Customizable;
+use Hypoid\Lavacharts\Support\Contracts\WrappableInterface as Wrappable;
 
 /**
  * Filter Parent Class
@@ -14,7 +14,7 @@ use Khill\Lavacharts\Support\Contracts\WrappableInterface as Wrappable;
  * functions to the child objects.
  *
  *
- * @package   Khill\Lavacharts\Dashboards\Filters
+ * @package   Hypoid\Lavacharts\Dashboards\Filters
  * @since     3.0.0
  * @author    Kevin Hill <kevinkhill@gmail.com>
  * @copyright (c) 2017, KHill Designs
@@ -36,7 +36,7 @@ class Filter extends Customizable implements Wrappable
      *
      * @param  string|int $cLabelOrIndex
      * @param  array      $options Array of options to set.
-     * @throws \Khill\Lavacharts\Exceptions\InvalidParamType
+     * @throws \Hypoid\Lavacharts\Exceptions\InvalidParamType
      */
     public function __construct($cLabelOrIndex, array $options = [])
     {

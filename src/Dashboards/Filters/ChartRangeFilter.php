@@ -1,6 +1,6 @@
 <?php
 
-namespace Khill\Lavacharts\Dashboards\Filters;
+namespace Hypoid\Lavacharts\Dashboards\Filters;
 
 /**
  * Chart Range Filter Class
@@ -8,7 +8,7 @@ namespace Khill\Lavacharts\Dashboards\Filters;
  * A slider with two thumbs superimposed onto a chart, to select a range of values
  * from the continuous axis of the chart.
  *
- * @package   Khill\Lavacharts\Dashboards\Filters
+ * @package   Hypoid\Lavacharts\Dashboards\Filters
  * @since     3.0.0
  * @author    Kevin Hill <kevinkhill@gmail.com>
  * @copyright (c) 2017, KHill Designs

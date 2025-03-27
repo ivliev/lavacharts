@@ -2,6 +2,6 @@
 
 require('vendor/autoload.php');
 
-use \Khill\Lavacharts\Charts\ChartFactory;
+use \Hypoid\Lavacharts\Charts\ChartFactory;
 
 echo json_encode(ChartFactory::$CHART_TYPES);

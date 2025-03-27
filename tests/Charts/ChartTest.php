@@ -1,9 +1,9 @@
 <?php
 
-namespace Khill\Lavacharts\Tests\Charts;
+namespace Hypoid\Lavacharts\Tests\Charts;
 
-use Khill\Lavacharts\Charts\LineChart;
-use Khill\Lavacharts\Tests\ProvidersTestCase;
+use Hypoid\Lavacharts\Charts\LineChart;
+use Hypoid\Lavacharts\Tests\ProvidersTestCase;
 
 class ChartTest extends ProvidersTestCase
 {

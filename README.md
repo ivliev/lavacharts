@@ -1,3 +1,7 @@
+# Lavacharts 3.5
+
+- Tentative d'update pour Laravel 12 et multi correction
+
 # Lavacharts 3.1.12
 
 [![Total Downloads](https://img.shields.io/packagist/dt/khill/lavacharts.svg?style=plastic)](https://packagist.org/packages/khill/lavacharts)
@@ -57,7 +61,7 @@ $ composer update
 
 ## Framework Agnostic
 If you are using Lavacharts with Silex, Lumen or your own Composer project, that's no problem! Just make sure to:
-`require 'vendor/autoload.php';` within you project and create an instance of Lavacharts: `$lava = new Khill\Lavacharts\Lavacharts;`
+`require 'vendor/autoload.php';` within you project and create an instance of Lavacharts: `$lava = new Hypoid\Lavacharts\Lavacharts;`
 
 
 ## Laravel
@@ -81,14 +85,14 @@ Register Lavacharts in your app by adding these lines to the respective arrays f
 'providers' => [
     // ...
 
-    Khill\Lavacharts\Laravel\LavachartsServiceProvider::class,
+    Hypoid\Lavacharts\Laravel\LavachartsServiceProvider::class,
 ],
 
 // ...
 'aliases' => [
     // ...
 
-    'Lava' => Khill\Lavacharts\Laravel\LavachartsFacade::class,
+    'Lava' => Hypoid\Lavacharts\Laravel\LavachartsFacade::class,
 ]
 ```
 #### Configuration
@@ -107,14 +111,14 @@ Register Lavacharts in your app by adding these lines to the respective arrays f
 'providers' => array(
     // ...
 
-    "Khill\Lavacharts\Laravel\LavachartsServiceProvider",
+    "Hypoid\Lavacharts\Laravel\LavachartsServiceProvider",
 ),
 
 // ...
 'aliases' => array(
     // ...
 
-    'Lava' => "Khill\Lavacharts\Laravel\LavachartsFacade",
+    'Lava' => "Hypoid\Lavacharts\Laravel\LavachartsFacade",
 )
 ```
 #### Configuration
@@ -140,7 +144,7 @@ class AppKernel extends Kernel
         $bundles = array(
             // ...
 
-            new Khill\Lavacharts\Symfony\Bundle\LavachartsBundle(),
+            new Hypoid\Lavacharts\Symfony\Bundle\LavachartsBundle(),
         );
     }
 }
@@ -193,7 +197,7 @@ $data->addColumns([
 ]);
 ```
 
-Or you can `use \Khill\Lavacharts\DataTables\DataFactory` [to create DataTables in another way](https://gist.github.com/kevinkhill/0c7c5f6211c7fd8f9658)
+Or you can `use \Hypoid\Lavacharts\DataTables\DataFactory` [to create DataTables in another way](https://gist.github.com/kevinkhill/0c7c5f6211c7fd8f9658)
 
 #### Chart Options
 Customize your chart, with any options found in Google's documentation. Break objects down into arrays and pass to the chart.

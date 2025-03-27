@@ -1,6 +1,6 @@
 <?php
 
-namespace Khill\Lavacharts\Support\Traits;
+namespace Hypoid\Lavacharts\Support\Traits;
 
 use ArrayAccess;
 use Countable;
@@ -11,7 +11,7 @@ use Traversable;
  *
  * Provides a method for primitively checking that an array is multi dimensional.
  *
- * @package   Khill\Lavacharts\Support\Traits
+ * @package   Hypoid\Lavacharts\Support\Traits
  * @since     3.1.0
  * @author    Kevin Hill <kevinkhill@gmail.com>
  * @copyright (c) 2017, KHill Designs

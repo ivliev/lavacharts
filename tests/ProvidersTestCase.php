@@ -1,9 +1,9 @@
 <?php
 
-namespace Khill\Lavacharts\Tests;
+namespace Hypoid\Lavacharts\Tests;
 
-use Khill\Lavacharts\Charts\ChartFactory;
-use Khill\Lavacharts\DataTables\Columns\ColumnFactory;
+use Hypoid\Lavacharts\Charts\ChartFactory;
+use Hypoid\Lavacharts\DataTables\Columns\ColumnFactory;
 
 define('DATATABLE_NS', "\\Khill\\Lavacharts\\DataTables\\");
 
@@ -12,12 +12,12 @@ abstract class ProvidersTestCase extends \PHPUnit_Framework_TestCase
     /**
      * Namespace for Mocks
      */
-    const NS = '\Khill\Lavacharts';
+    const NS = '\Hypoid\Lavacharts';
 
     /**
      * Partial DataTable for use throughout various tests
      *
-     * @var \Khill\Lavacharts\DataTables\DataTable
+     * @var \Hypoid\Lavacharts\DataTables\DataTable
      */
     protected $partialDataTable;
 
@@ -91,7 +91,7 @@ abstract class ProvidersTestCase extends \PHPUnit_Framework_TestCase
      */
     public function getMockLabel($label)
     {
-        return \Mockery::mock('\Khill\Lavacharts\Values\Label', [$label])->makePartial();
+        return \Mockery::mock('\Hypoid\Lavacharts\Values\Label', [$label])->makePartial();
     }
 
     /**
@@ -102,7 +102,7 @@ abstract class ProvidersTestCase extends \PHPUnit_Framework_TestCase
      */
     public function getMockElementId($label)
     {
-        return \Mockery::mock('\Khill\Lavacharts\Values\ElementId', [$label])->makePartial();
+        return \Mockery::mock('\Hypoid\Lavacharts\Values\ElementId', [$label])->makePartial();
     }
 
     /**
@@ -112,7 +112,7 @@ abstract class ProvidersTestCase extends \PHPUnit_Framework_TestCase
      */
     public function getMockDataTable()
     {
-        return \Mockery::mock('Khill\Lavacharts\DataTables\DataTable')->makePartial();
+        return \Mockery::mock('Hypoid\Lavacharts\DataTables\DataTable')->makePartial();
     }
 
     public function nonStringOrIntProvider()

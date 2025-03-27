@@ -1,10 +1,10 @@
 <?php
 
-namespace Khill\Lavacharts\Charts;
+namespace Hypoid\Lavacharts\Charts;
 
-use \Khill\Lavacharts\Builders\ChartBuilder;
-use Khill\Lavacharts\DataTables\DataTable;
-use \Khill\Lavacharts\Exceptions\InvalidDataTable;
+use \Hypoid\Lavacharts\Builders\ChartBuilder;
+use Hypoid\Lavacharts\DataTables\DataTable;
+use \Hypoid\Lavacharts\Exceptions\InvalidDataTable;
 
 /**
  * ChartFactory Class
@@ -14,7 +14,7 @@ use \Khill\Lavacharts\Exceptions\InvalidDataTable;
  *
  *
  * @category  Class
- * @package   Khill\Lavacharts\Charts
+ * @package   Hypoid\Lavacharts\Charts
  * @since     3.1.0
  * @author    Kevin Hill <kevinkhill@gmail.com>
  * @copyright (c) 2017, KHill Designs
@@ -27,7 +27,7 @@ class ChartFactory
     /**
      * Instance of the ChartBuilder for, well, building charts.
      *
-     * @var \Khill\Lavacharts\Builders\ChartBuilder
+     * @var \Hypoid\Lavacharts\Builders\ChartBuilder
      */
     private $chartBuilder;
 
@@ -83,9 +83,9 @@ class ChartFactory
      *
      * @param  string $type Type of chart to create.
      * @param  array  $args Passed arguments from __call in Lavacharts.
-     * @return \Khill\Lavacharts\Charts\Chart
-     * @throws \Khill\Lavacharts\Exceptions\InvalidChartType
-     * @throws \Khill\Lavacharts\Exceptions\InvalidDataTable
+     * @return \Hypoid\Lavacharts\Charts\Chart
+     * @throws \Hypoid\Lavacharts\Exceptions\InvalidChartType
+     * @throws \Hypoid\Lavacharts\Exceptions\InvalidDataTable
      */
     public function create($type, $args)
     {

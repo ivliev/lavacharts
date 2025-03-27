@@ -1,8 +1,8 @@
 <?php
 
-namespace Khill\Lavacharts\Tests\DataTables\Columns;
+namespace Hypoid\Lavacharts\Tests\DataTables\Columns;
 
-use Khill\Lavacharts\DataTables\Columns\Column;
+use Hypoid\Lavacharts\DataTables\Columns\Column;
 
 class MockColumn extends Column
 {

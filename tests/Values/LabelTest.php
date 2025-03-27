@@ -1,9 +1,9 @@
 <?php
 
-namespace Khill\Lavacharts\Tests\Values;
+namespace Hypoid\Lavacharts\Tests\Values;
 
-use Khill\Lavacharts\Tests\ProvidersTestCase;
-use Khill\Lavacharts\Values\Label;
+use Hypoid\Lavacharts\Tests\ProvidersTestCase;
+use Hypoid\Lavacharts\Values\Label;
 
 class LabelTest extends ProvidersTestCase
 {
@@ -16,7 +16,7 @@ class LabelTest extends ProvidersTestCase
 
     /**
      * @dataProvider nonStringProvider
-     * @expectedException \Khill\Lavacharts\Exceptions\InvalidLabel
+     * @expectedException \Hypoid\Lavacharts\Exceptions\InvalidLabel
      */
     public function testLabelWithBadTypes($badTypes)
     {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Khill\Lavacharts\Support;
+namespace Hypoid\Lavacharts\Support;
 
-use \Khill\Lavacharts\Values\Label;
-use \Khill\Lavacharts\Values\ElementId;
-use \Khill\Lavacharts\Support\Traits\ElementIdTrait as HasElementId;
+use \Hypoid\Lavacharts\Values\Label;
+use \Hypoid\Lavacharts\Values\ElementId;
+use \Hypoid\Lavacharts\Support\Traits\ElementIdTrait as HasElementId;
 
 /**
  * Renderable Class
@@ -12,7 +12,7 @@ use \Khill\Lavacharts\Support\Traits\ElementIdTrait as HasElementId;
  * This class is the parent to charts, dashboards, and controls since they
  * will need to be rendered onto the page.
  *
- * @package    Khill\Lavacharts\Support
+ * @package    Hypoid\Lavacharts\Support
  * @since      3.1.0
  * @author     Kevin Hill <kevinkhill@gmail.com>
  * @copyright  (c) 2017, KHill Designs
@@ -27,24 +27,24 @@ class Renderable
     /**
      * The renderable's unique label.
      *
-     * @var \Khill\Lavacharts\Values\Label
+     * @var \Hypoid\Lavacharts\Values\Label
      */
     protected $label;
 
     /**
      * The renderable's unique elementId.
      *
-     * @var \Khill\Lavacharts\Values\ElementId
+     * @var \Hypoid\Lavacharts\Values\ElementId
      */
     protected $elementId;
 
     /**
      * Sets the renderable's ElementId or generates on from a string
      *
-     * @param \Khill\Lavacharts\Values\Label     $label
-     * @param \Khill\Lavacharts\Values\ElementId $elementId
+     * @param \Hypoid\Lavacharts\Values\Label     $label
+     * @param \Hypoid\Lavacharts\Values\ElementId $elementId
      */
-    public function __construct(Label $label, ElementId $elementId = null)
+    public function __construct(Label $label, ?ElementId $elementId = null)
     {
         $this->label = $label;
 
@@ -58,8 +58,8 @@ class Renderable
     /**
      * Creates and/or sets the Label.
      *
-     * @param  string|\Khill\Lavacharts\Values\Label $label
-     * @throws \Khill\Lavacharts\Exceptions\InvalidLabel
+     * @param  string|\Hypoid\Lavacharts\Values\Label $label
+     * @throws \Hypoid\Lavacharts\Exceptions\InvalidLabel
      */
     public function setLabel($label)
     {
@@ -73,7 +73,7 @@ class Renderable
     /**
      * Returns the label.
      *
-     * @return \Khill\Lavacharts\Values\Label
+     * @return \Hypoid\Lavacharts\Values\Label
      */
     public function getLabel()
     {
@@ -83,7 +83,7 @@ class Renderable
     /**
      * Returns the label.
      *
-     * @return \Khill\Lavacharts\Values\Label
+     * @return \Hypoid\Lavacharts\Values\Label
      */
     public function getLabelStr()
     {

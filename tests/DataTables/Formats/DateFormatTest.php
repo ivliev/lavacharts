@@ -1,12 +1,12 @@
 <?php
 
-namespace Khill\Lavacharts\Tests\Formats;
+namespace Hypoid\Lavacharts\Tests\Formats;
 
-use Khill\Lavacharts\Tests\ProvidersTestCase;
-use Khill\Lavacharts\DataTables\Formats\DateFormat;
+use Hypoid\Lavacharts\Tests\ProvidersTestCase;
+use Hypoid\Lavacharts\DataTables\Formats\DateFormat;
 
 /**
- * @property \Khill\Lavacharts\DataTables\Formats\DateFormat dateFormat
+ * @property \Hypoid\Lavacharts\DataTables\Formats\DateFormat dateFormat
  */
 class DateFormatTest extends ProvidersTestCase
 {
@@ -22,7 +22,7 @@ class DateFormatTest extends ProvidersTestCase
     }
 
     /**
-     * @covers \Khill\Lavacharts\DataTables\Formats\DateFormat
+     * @covers \Hypoid\Lavacharts\DataTables\Formats\DateFormat
      */
     public function testConstructorOptionAssignment()
     {
@@ -46,7 +46,7 @@ class DateFormatTest extends ProvidersTestCase
     }
 
     /**
-     * @covers \Khill\Lavacharts\DataTables\Formats\DateFormat::toJson()
+     * @covers \Hypoid\Lavacharts\DataTables\Formats\DateFormat::toJson()
      */
     public function testToJson()
     {
@@ -54,7 +54,7 @@ class DateFormatTest extends ProvidersTestCase
     }
 
     /**
-     * @covers \Khill\Lavacharts\DataTables\Formats\DateFormat::jsonSerialize()
+     * @covers \Hypoid\Lavacharts\DataTables\Formats\DateFormat::jsonSerialize()
      */
     public function testJsonSerialization()
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Khill\Lavacharts\Laravel;
+namespace Hypoid\Lavacharts\Laravel;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Facade;
  * Enables member methods via static accessor for Lavacharts in Laravel.
  *
  *
- * @package    Khill\Lavacharts\Laravel
+ * @package    Hypoid\Lavacharts\Laravel
  * @since      2.5.0
  * @author     Kevin Hill <kevinkhill@gmail.com>
  * @copyright  (c) 2017, KHill Designs

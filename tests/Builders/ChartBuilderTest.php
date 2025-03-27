@@ -1,13 +1,13 @@
 <?php
 
-namespace Khill\Lavacharts\Tests\Builders;
+namespace Hypoid\Lavacharts\Tests\Builders;
 
-use Khill\Lavacharts\Builders\ChartBuilder;
-use Khill\Lavacharts\Charts\LineChart;
-use Khill\Lavacharts\Tests\ProvidersTestCase;
+use Hypoid\Lavacharts\Builders\ChartBuilder;
+use Hypoid\Lavacharts\Charts\LineChart;
+use Hypoid\Lavacharts\Tests\ProvidersTestCase;
 
 /**
- * @property \Khill\Lavacharts\Builders\ChartBuilder builder
+ * @property \Hypoid\Lavacharts\Builders\ChartBuilder builder
  */
 class ChartBuilderTest extends ProvidersTestCase
 {
@@ -26,9 +26,9 @@ class ChartBuilderTest extends ProvidersTestCase
 
         $chart = $this->builder->getChart();
 
-        $this->assertInstanceOf('\Khill\Lavacharts\Charts\LineChart', $chart);
+        $this->assertInstanceOf('\Hypoid\Lavacharts\Charts\LineChart', $chart);
         $this->assertEquals('taco', $chart->getLabelStr());
-        $this->assertInstanceOf('\Khill\Lavacharts\Datatables\Datatable', $chart->getDataTable());
+        $this->assertInstanceOf('\Hypoid\Lavacharts\Datatables\Datatable', $chart->getDataTable());
     }
 
     /**
@@ -64,7 +64,7 @@ class ChartBuilderTest extends ProvidersTestCase
 
         $elementId = $this->inspect($chart, 'elementId');
 
-        $this->assertInstanceOf('\Khill\Lavacharts\Values\ElementId', $elementId);
+        $this->assertInstanceOf('\Hypoid\Lavacharts\Values\ElementId', $elementId);
         $this->assertEquals('platter', (string) $elementId);
     }
 }

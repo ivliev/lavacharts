@@ -1,9 +1,9 @@
 <?php
 
-namespace Khill\Lavacharts\Support\Html;
+namespace Hypoid\Lavacharts\Support\Html;
 
-use Khill\Lavacharts\Exceptions\InvalidConfigValue;
-use Khill\Lavacharts\Exceptions\InvalidDivDimensions;
+use Hypoid\Lavacharts\Exceptions\InvalidConfigValue;
+use Hypoid\Lavacharts\Exceptions\InvalidDivDimensions;
 
 /**
  * Temporary class until removal in 3.2
@@ -30,8 +30,8 @@ class HtmlFactory
      * @since  3.1.0
      * @param  string     $elementId  Element id to apply to the div.
      * @param  array|bool $dimensions Height & width of the div.
-     * @throws \Khill\Lavacharts\Exceptions\InvalidDivDimensions
-     * @throws \Khill\Lavacharts\Exceptions\InvalidConfigValue
+     * @throws \Hypoid\Lavacharts\Exceptions\InvalidDivDimensions
+     * @throws \Hypoid\Lavacharts\Exceptions\InvalidConfigValue
      * @return string HTML div element.
      */
     public static function createDiv($elementId, $dimensions = true)
@@ -74,7 +74,7 @@ class HtmlFactory
      * @access private
      * @since  3.0.0
      * @param  int|string $dimension An integer or a string representing a percent.
-     * @throws \Khill\Lavacharts\Exceptions\InvalidConfigValue
+     * @throws \Hypoid\Lavacharts\Exceptions\InvalidConfigValue
      * @return string
      */
     private static function dimensionTypeCheck($dimension)

@@ -1,8 +1,8 @@
 <?php
 
-namespace Khill\Lavacharts\Tests\Charts;
+namespace Hypoid\Lavacharts\Tests\Charts;
 
-use \Khill\Lavacharts\Charts\Chart;
+use \Hypoid\Lavacharts\Charts\Chart;
 
 /**
  * MockChart Class

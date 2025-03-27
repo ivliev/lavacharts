@@ -1,10 +1,10 @@
 <?php
 
-namespace Khill\Lavacharts\DataTables\Columns;
+namespace Hypoid\Lavacharts\DataTables\Columns;
 
-use Khill\Lavacharts\DataTables\Formats\Format;
-use Khill\Lavacharts\Support\Customizable;
-use Khill\Lavacharts\Values\Role;
+use Hypoid\Lavacharts\DataTables\Formats\Format;
+use Hypoid\Lavacharts\Support\Customizable;
+use Hypoid\Lavacharts\Values\Role;
 
 /**
  * Column Object
@@ -12,7 +12,7 @@ use Khill\Lavacharts\Values\Role;
  * The Column object is used to define the different columns for a DataTable.
  *
  *
- * @package   Khill\Lavacharts\DataTables\Columns
+ * @package   Hypoid\Lavacharts\DataTables\Columns
  * @since     3.0.0
  * @author    Kevin Hill <kevinkhill@gmail.com>
  * @copyright (c) 2017, KHill Designs
@@ -39,7 +39,7 @@ class Column extends Customizable
     /**
      * Column formatter.
      *
-     * @var \Khill\Lavacharts\DataTables\Formats\Format
+     * @var \Hypoid\Lavacharts\DataTables\Formats\Format
      */
     protected $format = null;
 
@@ -55,11 +55,11 @@ class Column extends Customizable
      *
      * @param  string                                      $type    Column type.
      * @param  string                                      $label   Column label (optional).
-     * @param  \Khill\Lavacharts\DataTables\Formats\Format $format  Column format(optional).
-     * @param  \Khill\Lavacharts\Values\Role               $role    Column role (optional).
+     * @param  \Hypoid\Lavacharts\DataTables\Formats\Format $format  Column format(optional).
+     * @param  \Hypoid\Lavacharts\Values\Role               $role    Column role (optional).
      * @param  array                                       $options Column options (optional).
      */
-    public function __construct($type, $label = '', Format $format = null, Role $role = null, array $options = [])
+    public function __construct($type, $label = '', ?Format $format = null, ?Role $role = null, array $options = [])
     {
         parent::__construct($options);
 
@@ -92,7 +92,7 @@ class Column extends Customizable
     /**
      * Returns the column formatter.
      *
-     * @return \Khill\Lavacharts\DataTables\Formats\Format
+     * @return \Hypoid\Lavacharts\DataTables\Formats\Format
      */
     public function getFormat()
     {
@@ -124,7 +124,7 @@ class Column extends Customizable
      *
      * @return array
      */
-    public function jsonSerialize()
+    public function jsonSerialize():mixed
     {
         $values = [
             'type' => $this->type

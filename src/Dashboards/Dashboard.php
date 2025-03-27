@@ -1,16 +1,16 @@
 <?php
 
-namespace Khill\Lavacharts\Dashboards;
+namespace Hypoid\Lavacharts\Dashboards;
 
-use \Khill\Lavacharts\Values\Label;
-use \Khill\Lavacharts\Values\ElementId;
-use \Khill\Lavacharts\DataTables\DataTable;
-use \Khill\Lavacharts\Dashboards\Bindings\BindingFactory;
-use \Khill\Lavacharts\Support\Traits\DataTableTrait as HasDataTable;
-use \Khill\Lavacharts\Support\Traits\RenderableTrait as IsRenderable;
-use \Khill\Lavacharts\Support\Contracts\DataTableInterface as DataTables;
-use \Khill\Lavacharts\Support\Contracts\RenderableInterface as Renderable;
-use \Khill\Lavacharts\Support\Contracts\VisualizationInterface as Visualization;
+use \Hypoid\Lavacharts\Values\Label;
+use \Hypoid\Lavacharts\Values\ElementId;
+use \Hypoid\Lavacharts\DataTables\DataTable;
+use \Hypoid\Lavacharts\Dashboards\Bindings\BindingFactory;
+use \Hypoid\Lavacharts\Support\Traits\DataTableTrait as HasDataTable;
+use \Hypoid\Lavacharts\Support\Traits\RenderableTrait as IsRenderable;
+use \Hypoid\Lavacharts\Support\Contracts\DataTableInterface as DataTables;
+use \Hypoid\Lavacharts\Support\Contracts\RenderableInterface as Renderable;
+use \Hypoid\Lavacharts\Support\Contracts\VisualizationInterface as Visualization;
 
 /**
  * Class Dashboard
@@ -20,7 +20,7 @@ use \Khill\Lavacharts\Support\Contracts\VisualizationInterface as Visualization;
  * The dashboard takes filters, wrapped as controls, and charts to create a dynamic
  * display of data.
  *
- * @package   Khill\Lavacharts\Dashboards
+ * @package   Hypoid\Lavacharts\Dashboards
  * @since     3.0.0
  * @author    Kevin Hill <kevinkhill@gmail.com>
  * @copyright (c) 2017, KHill Designs
@@ -56,7 +56,7 @@ class Dashboard implements DataTables, Renderable, Visualization
     /**
      * Binding Factory for creating new bindings
      *
-     * @var \Khill\Lavacharts\Dashboards\Bindings\BindingFactory
+     * @var \Hypoid\Lavacharts\Dashboards\Bindings\BindingFactory
      */
     private $bindingFactory;
 
@@ -72,14 +72,14 @@ class Dashboard implements DataTables, Renderable, Visualization
      *
      * If passed an array of bindings, they will be applied upon creation.
      *
-     * @param \Khill\Lavacharts\Values\Label         $label Label for the Dashboard
-     * @param \Khill\Lavacharts\DataTables\DataTable $datatable
-     * @param \Khill\Lavacharts\Values\ElementId     $elementId Element Id for the Dashboard
+     * @param \Hypoid\Lavacharts\Values\Label         $label Label for the Dashboard
+     * @param \Hypoid\Lavacharts\DataTables\DataTable $datatable
+     * @param \Hypoid\Lavacharts\Values\ElementId     $elementId Element Id for the Dashboard
      */
     public function __construct(
         Label $label,
         DataTable $datatable,
-        ElementId $elementId = null
+        ?ElementId $elementId = null
     )
     {
         $this->bindingFactory = new BindingFactory;
@@ -151,10 +151,10 @@ class Dashboard implements DataTables, Renderable, Visualization
      * - If an array of ControlWrappers is passed with and array of ChartWrappers, then
      *   a ManyToMany binding is created.
      *
-     * @param  \Khill\Lavacharts\Dashboards\Wrappers\ControlWrapper|array $controlWraps
-     * @param  \Khill\Lavacharts\Dashboards\Wrappers\ChartWrapper|array   $chartWraps
-     * @return \Khill\Lavacharts\Dashboards\Dashboard
-     * @throws \Khill\Lavacharts\Exceptions\InvalidBindings
+     * @param  \Hypoid\Lavacharts\Dashboards\Wrappers\ControlWrapper|array $controlWraps
+     * @param  \Hypoid\Lavacharts\Dashboards\Wrappers\ChartWrapper|array   $chartWraps
+     * @return \Hypoid\Lavacharts\Dashboards\Dashboard
+     * @throws \Hypoid\Lavacharts\Exceptions\InvalidBindings
      */
     public function bind($controlWraps, $chartWraps)
     {
@@ -169,8 +169,8 @@ class Dashboard implements DataTables, Renderable, Visualization
      * This method can set all bindings at once instead of chaining multiple bind methods.
      *
      * @param  array $bindings
-     * @return \Khill\Lavacharts\Dashboards\Dashboard
-     * @throws \Khill\Lavacharts\Exceptions\InvalidBindings
+     * @return \Hypoid\Lavacharts\Dashboards\Dashboard
+     * @throws \Hypoid\Lavacharts\Exceptions\InvalidBindings
      */
     public function setBindings(array $bindings)
     {

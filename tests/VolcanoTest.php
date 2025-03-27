@@ -1,20 +1,20 @@
 <?php
 
-namespace Khill\Lavacharts\Tests;
+namespace Hypoid\Lavacharts\Tests;
 
-use Khill\Lavacharts\Volcano;
+use Hypoid\Lavacharts\Volcano;
 
 /**
  * @property \Mockery\MockInterface    mockDashboard
  * @property \Mockery\MockInterface    mockLineChart
  * @property \Mockery\Mock             mockBadLabel
  * @property \Mockery\Mock             mockGoodLabel
- * @property \Khill\Lavacharts\Volcano volcano
+ * @property \Hypoid\Lavacharts\Volcano volcano
  */
 class VolcanoTest extends ProvidersTestCase
 {
     /**
-     * @var \Khill\Lavacharts\Volcano
+     * @var \Hypoid\Lavacharts\Volcano
      */
     public $Volcano;
 
@@ -24,11 +24,11 @@ class VolcanoTest extends ProvidersTestCase
 
         $this->volcano = new Volcano;
 
-        $this->mockGoodLabel = \Mockery::mock('\Khill\Lavacharts\Values\Label', ['TestRenderable'])->makePartial();
+        $this->mockGoodLabel = \Mockery::mock('\Hypoid\Lavacharts\Values\Label', ['TestRenderable'])->makePartial();
 
-        $this->mockBadLabel = \Mockery::mock('\Khill\Lavacharts\Values\Label', ['Pumpkins'])->makePartial();
+        $this->mockBadLabel = \Mockery::mock('\Hypoid\Lavacharts\Values\Label', ['Pumpkins'])->makePartial();
 
-        $this->mockLineChart = \Mockery::mock('\Khill\Lavacharts\Charts\LineChart', [
+        $this->mockLineChart = \Mockery::mock('\Hypoid\Lavacharts\Charts\LineChart', [
             $this->mockGoodLabel,
             $this->getMockDataTable()
         ])->shouldReceive('getLabel')
@@ -38,7 +38,7 @@ class VolcanoTest extends ProvidersTestCase
           ->andReturn('LineChart')
           ->getMock();
 
-        $this->mockDashboard = \Mockery::mock('\Khill\Lavacharts\Dashboards\Dashboard', [
+        $this->mockDashboard = \Mockery::mock('\Hypoid\Lavacharts\Dashboards\Dashboard', [
             $this->mockGoodLabel,
             $this->getMockDataTable()
         ])->shouldReceive('getLabel')->andReturn('TestRenderable')->getMock();
@@ -63,7 +63,7 @@ class VolcanoTest extends ProvidersTestCase
      */
     public function testStoreWithDashboard()
     {
-        $chart = \Mockery::mock('\Khill\Lavacharts\Dashboards\Dashboard', [
+        $chart = \Mockery::mock('\Hypoid\Lavacharts\Dashboards\Dashboard', [
             $this->mockGoodLabel,
             $this->getMockDataTable()
         ])->shouldReceive('getLabel')
@@ -96,7 +96,7 @@ class VolcanoTest extends ProvidersTestCase
     {
         $this->volcano->store($this->mockLineChart);
 
-        $this->assertInstanceOf('\Khill\Lavacharts\Charts\LineChart', $this->volcano->get('LineChart', $this->mockGoodLabel));
+        $this->assertInstanceOf('\Hypoid\Lavacharts\Charts\LineChart', $this->volcano->get('LineChart', $this->mockGoodLabel));
     }
 
     /**
@@ -104,7 +104,7 @@ class VolcanoTest extends ProvidersTestCase
      * @depends testStoreWithChart
      * @depends testCheckChart
      * @depends testGetChart
-     * @expectedException \Khill\Lavacharts\Exceptions\ChartNotFound
+     * @expectedException \Hypoid\Lavacharts\Exceptions\ChartNotFound
      */
     public function testGetChartWithBadChartType()
     {
@@ -117,7 +117,7 @@ class VolcanoTest extends ProvidersTestCase
      * @depends testStoreWithChart
      * @depends testCheckChart
      * @depends testGetChart
-     * @expectedException \Khill\Lavacharts\Exceptions\ChartNotFound
+     * @expectedException \Hypoid\Lavacharts\Exceptions\ChartNotFound
      */
     public function testGetChartWithNonExistentLabel()
     {
@@ -157,7 +157,7 @@ class VolcanoTest extends ProvidersTestCase
 
         $dash = $this->volcano->get('Dashboard', $this->mockGoodLabel);
 
-        $this->assertInstanceOf('\Khill\Lavacharts\Dashboards\Dashboard', $dash);
+        $this->assertInstanceOf('\Hypoid\Lavacharts\Dashboards\Dashboard', $dash);
     }
 
     /**
@@ -165,7 +165,7 @@ class VolcanoTest extends ProvidersTestCase
      * @depends testStoreWithDashboard
      * @depends testCheckDashboard
      * @depends testGetDashboard
-     * @expectedException \Khill\Lavacharts\Exceptions\DashboardNotFound
+     * @expectedException \Hypoid\Lavacharts\Exceptions\DashboardNotFound
      */
     public function testGetDashboardWithBadLabel()
     {
@@ -186,7 +186,7 @@ class VolcanoTest extends ProvidersTestCase
         $this->volcano->store($this->mockDashboard);
 
         foreach ($this->volcano->getAll() as $renderable) {
-            $this->assertInstanceOf('\Khill\Lavacharts\Support\Contracts\RenderableInterface', $renderable);
+            $this->assertInstanceOf('\Hypoid\Lavacharts\Support\Contracts\RenderableInterface', $renderable);
         }
     }
 }

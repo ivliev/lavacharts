@@ -1,10 +1,10 @@
 <?php
 
-namespace Khill\Lavacharts\Javascript;
+namespace Hypoid\Lavacharts\Javascript;
 
-use Khill\Lavacharts\Lavacharts;
-use Khill\Lavacharts\Dashboards\Dashboard;
-use Khill\Lavacharts\Values\ElementId;
+use Hypoid\Lavacharts\Lavacharts;
+use Hypoid\Lavacharts\Dashboards\Dashboard;
+use Hypoid\Lavacharts\Values\ElementId;
 
 /**
  * DashboardFactory Class
@@ -13,7 +13,7 @@ use Khill\Lavacharts\Values\ElementId;
  * javascript blocks for outputting into the page.
  *
  * @category   Class
- * @package    Khill\Lavacharts\Javascript
+ * @package    Hypoid\Lavacharts\Javascript
  * @since      3.0.0
  * @author     Kevin Hill <kevinkhill@gmail.com>
  * @copyright  (c) 2017, KHill Designs
@@ -33,14 +33,14 @@ class DashboardJsFactory extends JavascriptFactory
     /**
      * Dashboard to generate javascript from.
      *
-     * @var \Khill\Lavacharts\Dashboards\Dashboard
+     * @var \Hypoid\Lavacharts\Dashboards\Dashboard
      */
     private $dashboard;
 
     /**
      * Creates a new DashboardFactory with the javascript template.
      *
-     * @param \Khill\Lavacharts\Dashboards\Dashboard $dashboard
+     * @param \Hypoid\Lavacharts\Dashboards\Dashboard $dashboard
      */
     public function __construct(Dashboard $dashboard)
     {
@@ -70,7 +70,7 @@ class DashboardJsFactory extends JavascriptFactory
             'chartData' =>$this->dashboard->getDataTableJson()
         ];
 
-        /** @var \Khill\Lavacharts\Charts\Chart $chart */
+        /** @var \Hypoid\Lavacharts\Charts\Chart $chart */
         foreach ($this->dashboard->getBoundCharts() as $chart) {
 
             array_push($vars['packages'], $chart->getJsPackage());
@@ -94,7 +94,7 @@ class DashboardJsFactory extends JavascriptFactory
         $buffer = '';
         $bindings = $this->dashboard->getBindings();
 
-        /** @var \Khill\Lavacharts\Dashboards\Bindings\Binding $binding */
+        /** @var \Hypoid\Lavacharts\Dashboards\Bindings\Binding $binding */
         foreach ($bindings as $binding) {
             switch ($binding::TYPE) {
                 case 'OneToOne':

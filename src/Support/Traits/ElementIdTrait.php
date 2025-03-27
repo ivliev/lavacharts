@@ -1,8 +1,8 @@
 <?php
 
-namespace Khill\Lavacharts\Support\Traits;
+namespace Hypoid\Lavacharts\Support\Traits;
 
-use Khill\Lavacharts\Values\ElementId;
+use Hypoid\Lavacharts\Values\ElementId;
 
 /**
  * Trait ElementIdTrait
@@ -10,7 +10,7 @@ use Khill\Lavacharts\Values\ElementId;
  * Trait for adding the methods for getting/setting the html id of a div tag,
  * that a Renderable can be output into.
  *
- * @package   Khill\Lavacharts\Support\Traits
+ * @package   Hypoid\Lavacharts\Support\Traits
  * @since     3.1.0
  * @author    Kevin Hill <kevinkhill@gmail.com>
  * @copyright (c) 2017, KHill Designs
@@ -23,8 +23,8 @@ trait ElementIdTrait
     /**
      * Creates and/or sets the ElementId.
      *
-     * @param  string|\Khill\Lavacharts\Values\ElementId $elementId
-     * @throws \Khill\Lavacharts\Exceptions\InvalidElementId
+     * @param  string|\Hypoid\Lavacharts\Values\ElementId $elementId
+     * @throws \Hypoid\Lavacharts\Exceptions\InvalidElementId
      */
     public function setElementId($elementId)
     {
@@ -49,7 +49,7 @@ trait ElementIdTrait
     /**
      * Returns the ElementId.
      *
-     * @return \Khill\Lavacharts\Values\ElementId
+     * @return \Hypoid\Lavacharts\Values\ElementId
      */
     public function getElementId()
     {

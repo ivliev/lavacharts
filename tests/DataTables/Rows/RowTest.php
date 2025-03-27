@@ -1,14 +1,14 @@
 <?php
 
-namespace Khill\Lavacharts\Tests\DataTables\Rows;
+namespace Hypoid\Lavacharts\Tests\DataTables\Rows;
 
-use Khill\Lavacharts\DataTables\Rows\Row;
-use Khill\Lavacharts\Tests\ProvidersTestCase;
+use Hypoid\Lavacharts\DataTables\Rows\Row;
+use Hypoid\Lavacharts\Tests\ProvidersTestCase;
 
 class RowTest extends ProvidersTestCase
 {
     /**
-     * @covers \Khill\Lavacharts\DataTables\Rows\Row::__construct
+     * @covers \Hypoid\Lavacharts\DataTables\Rows\Row::__construct
      */
     public function testConstructorWithNonCarbonValues()
     {
@@ -22,7 +22,7 @@ class RowTest extends ProvidersTestCase
     }
 
     /**
-     * @covers \Khill\Lavacharts\DataTables\Rows\Row::__construct
+     * @covers \Hypoid\Lavacharts\DataTables\Rows\Row::__construct
      */
     public function testConstructorWithCarbon()
     {
@@ -32,14 +32,14 @@ class RowTest extends ProvidersTestCase
 
         $values = $this->inspect($row, 'values');
 
-        $this->assertInstanceOf('\Khill\Lavacharts\DataTables\Cells\DateCell', $values[0]);
+        $this->assertInstanceOf('\Hypoid\Lavacharts\DataTables\Cells\DateCell', $values[0]);
         $this->assertEquals(1, $values[1]->getValue());
         $this->assertEquals(2.0, $values[2]->getValue());
     }
 
     /**
      * @depends testConstructorWithCarbon
-     * @covers \Khill\Lavacharts\DataTables\Rows\Row::getCell
+     * @covers \Hypoid\Lavacharts\DataTables\Rows\Row::getCell
      */
     public function testGetColumnValue()
     {
@@ -47,7 +47,7 @@ class RowTest extends ProvidersTestCase
 
         $row = new Row([$mockCarbon, 1, 2.0]);
 
-        $this->assertInstanceOf('\Khill\Lavacharts\DataTables\Cells\DateCell', $row->getCell(0));
+        $this->assertInstanceOf('\Hypoid\Lavacharts\DataTables\Cells\DateCell', $row->getCell(0));
         $this->assertEquals(1, $row->getCell(1)->getValue());
         $this->assertEquals(2.0, $row->getCell(2)->getValue());
     }
@@ -55,8 +55,8 @@ class RowTest extends ProvidersTestCase
     /**
      * @depends testConstructorWithCarbon
      * @dataProvider nonIntProvider
-     * @covers \Khill\Lavacharts\DataTables\Rows\Row::getCell
-     * @expectedException \Khill\Lavacharts\Exceptions\InvalidColumnIndex
+     * @covers \Hypoid\Lavacharts\DataTables\Rows\Row::getCell
+     * @expectedException \Hypoid\Lavacharts\Exceptions\InvalidColumnIndex
      */
     public function testGetColumnValueWithBadType($badTypes)
     {
@@ -69,8 +69,8 @@ class RowTest extends ProvidersTestCase
 
     /**
      * @depends testConstructorWithCarbon
-     * @covers \Khill\Lavacharts\DataTables\Rows\Row::getCell
-     * @expectedException \Khill\Lavacharts\Exceptions\InvalidColumnIndex
+     * @covers \Hypoid\Lavacharts\DataTables\Rows\Row::getCell
+     * @expectedException \Hypoid\Lavacharts\Exceptions\InvalidColumnIndex
      */
     public function testGetColumnValueWithInvalidColumnIndex()
     {
@@ -81,7 +81,7 @@ class RowTest extends ProvidersTestCase
 
     /**
      * @depends testConstructorWithCarbon
-     * @covers \Khill\Lavacharts\DataTables\Rows\Row::jsonSerialize
+     * @covers \Hypoid\Lavacharts\DataTables\Rows\Row::jsonSerialize
      */
     public function testJsonSerialization()
     {
