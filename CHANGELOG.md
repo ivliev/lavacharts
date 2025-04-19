@@ -1,3 +1,10 @@
+- 3.9
+  - Fixing bug Nesbot in v3.9
+  
+- 3.2--3.8
+  - Change code for forked Lavacharts and utilisation with Laravel 12
+  ---------------------------------  
+ 
 - 3.1.9
   - Fixing bug where using `setOptions` instead of the constructor skipped the processing of `png` and `material` attributes.
 

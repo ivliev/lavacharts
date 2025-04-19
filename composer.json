@@ -1,7 +1,7 @@
 {
     "name": "hypoid/lavacharts",
     "description": "PHP wrapper library for the Google Chart API forker",
-    "version": "3.8",
+    "version": "3.9",
     "keywords": [
         "charts",
         "graphs",
@@ -34,7 +34,7 @@
     },
     "require": {
         "php": ">=8.3",
-        "nesbot/carbon": "^3.8",
+        "nesbot/carbon": "^3.0|^4.0",
         "twig/twig": "^3.0"
     },
     "autoload": {
