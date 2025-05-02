@@ -33,7 +33,7 @@
         "khill/datatableplus": "Adds extra features to DataTables such as csv and laravel collection parsing."
     },
     "require": {
-        "php": ">=8.3",
+        "php": ">=8.2",
         "nesbot/carbon": ">=3.0 <6.0",
         "twig/twig": "^3.0"
     },
