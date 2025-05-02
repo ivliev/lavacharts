@@ -1,5 +1,5 @@
 {
-    "name": "hypoid/lavacharts",
+    "name": "ivliev/lavacharts",
     "description": "PHP wrapper library for the Google Chart API forker",
     "version": "3.9.1",
     "keywords": [
